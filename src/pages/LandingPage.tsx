@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import {
   ArrowRight,
   BarChart2,
   Cpu,
   DollarSign,
-  //   Mail,
   Shield,
   Star,
   TrendingUp,
@@ -14,55 +14,17 @@ import {
 const LandingPage: React.FC = () => {
   const [email, setEmail] = useState("");
 
+  const notify = () =>
+    toast(`Thank you for joining our waitlist with email: ${email}`);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission logic here
-    alert(`Thank you for joining our waitlist with email: ${email}`);
+    notify();
     setEmail("");
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <span className="ml-2 text-2xl font-bold text-blue-800">
-                  TradEx
-                </span>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                <a
-                  href="#features"
-                  className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                >
-                  Features
-                </a>
-                <a
-                  href="#pricing"
-                  className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#testimonials"
-                  className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                >
-                  Testimonials
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
-                Sign In
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -98,6 +60,18 @@ const LandingPage: React.FC = () => {
                       >
                         Join Waitlist
                         <ArrowRight className="ml-2 h-5 w-5" />
+                        <ToastContainer
+                          position="bottom-center"
+                          autoClose={5000}
+                          hideProgressBar={false}
+                          newestOnTop={false}
+                          closeOnClick={false}
+                          rtl={false}
+                          pauseOnFocusLoss
+                          draggable
+                          pauseOnHover
+                          theme="light"
+                        />
                       </button>
                     </div>
                   </form>
@@ -556,175 +530,6 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-800">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                Product
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    API
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Integrations
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                Resources
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Guides
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    API Reference
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Blog
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                Company
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Press
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                Legal
-              </h3>
-              <ul className="mt-4 space-y-4">
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Cookie Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-base text-gray-400 hover:text-white"
-                  >
-                    Licenses
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 border-t border-gray-700 pt-8">
-            <p className="text-base text-gray-400 text-center">
-              &copy; 2025 TradEx. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
