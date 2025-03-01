@@ -1,0 +1,35 @@
+{
+  "header": {
+    "features": "特徴",
+    "pricing": "価格",
+    "testimonials": "お客様の声",
+    "sign-in": "サインイン"
+  },
+  "footer": {
+    "sections": {
+      "product": "製品",
+      "resources": "リソース",
+      "company": "会社情報",
+      "legal": "法務"
+    },
+    "links": {
+      "features": "特徴",
+      "pricing": "価格",
+      "api": "API",
+      "integrations": "統合",
+      "documentation": "ドキュメント",
+      "guides": "ガイド",
+      "api_reference": "API リファレンス",
+      "blog": "ブログ",
+      "about": "会社概要",
+      "careers": "採用情報",
+      "press": "プレス",
+      "contact": "お問い合わせ",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "cookie_policy": "クッキーポリシー",
+      "licenses": "ライセンス"
+    },
+    "copyright": "© 2025 TradEx. 無断転載を禁じます。"
+  }
+}

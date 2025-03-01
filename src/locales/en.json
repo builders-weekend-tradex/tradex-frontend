@@ -1,0 +1,35 @@
+{
+  "header": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "sign-in": "Sign In"
+  },
+  "footer": {
+    "sections": {
+      "product": "Product",
+      "resources": "Resources",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "api": "API",
+      "integrations": "Integrations",
+      "documentation": "Documentation",
+      "guides": "Guides",
+      "api_reference": "API Reference",
+      "blog": "Blog",
+      "about": "About",
+      "careers": "Careers",
+      "press": "Press",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookie_policy": "Cookie Policy",
+      "licenses": "Licenses"
+    },
+    "copyright": "© 2025 TradEx. All rights reserved."
+  }
+}

@@ -49,7 +49,7 @@ const LandingPage: React.FC = () => {
                       type="email"
                       required
                       placeholder="Enter your email"
-                      className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md"
+                      className="w-full bg-gray-100 px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -81,11 +81,11 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
         <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
+          {/* <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
             src="/api/placeholder/800/600"
             alt="Trading dashboard"
-          />
+          /> */}
         </div>
       </div>
 
