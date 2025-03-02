@@ -35,13 +35,11 @@ const Header: React.FC = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center">
-            <LanguageSwitcher />
-          </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
-              {t("header.sign")}
+              {t("header.sign-in")}
             </button>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
