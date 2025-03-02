@@ -27,12 +27,6 @@ const Header: React.FC = () => {
               >
                 {t("header.pricing")}
               </a>
-              <a
-                href="#testimonials"
-                className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-              >
-                {t("header.testimonials")}
-              </a>
             </div>
           </div>
           <div className="flex items-center gap-2">
