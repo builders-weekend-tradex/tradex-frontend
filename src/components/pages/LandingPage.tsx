@@ -10,8 +10,10 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const LandingPage: React.FC = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
 
   const notify = () =>
@@ -32,24 +34,23 @@ const LandingPage: React.FC = () => {
             <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:mt-16 lg:px-8 xl:mt-20">
               <div className="sm:text-center lg:text-left">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block">Revolutionize Your</span>
+                  <span className="block">
+                    {t("landing_page.hero.title_black")}
+                  </span>
                   <span className="block text-blue-600">
-                    Investment Strategy
+                    {t("landing_page.hero.title_blue")}
                   </span>
                 </h1>
                 <p className="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0">
-                  TradEx leverages AI-powered insights to provide deep financial
-                  analysis, predictive insights, and market intelligence on
-                  JAXA-listed companies, bridging the gap between retail and
-                  institutional investors.
+                  {t("landing_page.hero.subtitle")}
                 </p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <form onSubmit={handleSubmit} className="sm:flex">
                     <input
                       type="email"
                       required
-                      placeholder="Enter your email"
-                      className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md"
+                      placeholder={t("landing_page.hero.placeholder")}
+                      className="w-full bg-gray-100 px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -58,7 +59,7 @@ const LandingPage: React.FC = () => {
                         type="submit"
                         className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-lg md:px-6"
                       >
-                        Join Waitlist
+                        {t("landing_page.hero.join")}
                         <ArrowRight className="ml-2 h-5 w-5" />
                         <ToastContainer
                           position="bottom-center"
@@ -80,13 +81,13 @@ const LandingPage: React.FC = () => {
             </main>
           </div>
         </div>
-        <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        {/* <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="/api/placeholder/800/600"
+            src=""
             alt="Trading dashboard"
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Feature Section */}
@@ -94,14 +95,13 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-              Features
+              {t("landing_page.feature_section.title")}
             </h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              AI-Powered Fundamental Analysis
+              {t("landing_page.feature_section.subtitle")}
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">
-              Make data-driven investment decisions with our cutting-edge AI
-              technology.
+              {t("landing_page.feature_section.subheading")}
             </p>
           </div>
 
@@ -112,11 +112,10 @@ const LandingPage: React.FC = () => {
                   <BarChart2 className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">
-                  Deep Financial Analysis
+                  {t("landing_page.feature_section.feature_1.title")}
                 </h3>
                 <p className="mt-2 text-base text-gray-600 text-center">
-                  Comprehensive analysis of financial statements, earnings
-                  reports, and key performance indicators.
+                  {t("landing_page.feature_section.feature_1.description")}
                 </p>
               </div>
 
@@ -125,11 +124,10 @@ const LandingPage: React.FC = () => {
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">
-                  Predictive Insights
+                  {t("landing_page.feature_section.feature_2.title")}
                 </h3>
                 <p className="mt-2 text-base text-gray-600 text-center">
-                  AI-driven forecasting models to predict stock performance and
-                  market trends.
+                  {t("landing_page.feature_section.feature_2.description")}
                 </p>
               </div>
 
@@ -138,11 +136,10 @@ const LandingPage: React.FC = () => {
                   <Cpu className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">
-                  LLM-Based Models
+                  {t("landing_page.feature_section.feature_3.title")}
                 </h3>
                 <p className="mt-2 text-base text-gray-600 text-center">
-                  Advanced language models that analyze reports and uncover
-                  hidden investment opportunities.
+                  {t("landing_page.feature_section.feature_3.description")}
                 </p>
               </div>
 
@@ -151,11 +148,10 @@ const LandingPage: React.FC = () => {
                   <Users className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">
-                  Community Insights
+                  {t("landing_page.feature_section.feature_4.title")}
                 </h3>
                 <p className="mt-2 text-base text-gray-600 text-center">
-                  Foster a community of data-driven investors through shared
-                  analytics and discussions.
+                  {t("landing_page.feature_section.feature_4.description")}
                 </p>
               </div>
 
@@ -164,11 +160,10 @@ const LandingPage: React.FC = () => {
                   <Shield className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">
-                  Transparent & Trustworthy
+                  {t("landing_page.feature_section.feature_5.title")}
                 </h3>
                 <p className="mt-2 text-base text-gray-600 text-center">
-                  Unbiased and explainable financial insights you can trust for
-                  your investment decisions.
+                  {t("landing_page.feature_section.feature_5.description")}
                 </p>
               </div>
 
@@ -177,11 +172,10 @@ const LandingPage: React.FC = () => {
                   <DollarSign className="h-6 w-6" />
                 </div>
                 <h3 className="mt-5 text-lg leading-6 font-medium text-gray-900">
-                  Real-time Market Intelligence
+                  {t("landing_page.feature_section.feature_6.title")}
                 </h3>
                 <p className="mt-2 text-base text-gray-600 text-center">
-                  Stay ahead with up-to-the-minute financial data and market
-                  analysis.
+                  {t("landing_page.feature_section.feature_6.description")}
                 </p>
               </div>
             </div>
@@ -194,14 +188,13 @@ const LandingPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-              Pricing
+              {t("landing_page.pricing_section.title")}
             </h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Plans for Every Investor
+              {t("landing_page.pricing_section.subtitle")}
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">
-              From casual investors to professional fund managers, we have a
-              plan that fits your needs.
+              {t("landing_page.pricing_section.subheading")}
             </p>
           </div>
 
@@ -209,16 +202,18 @@ const LandingPage: React.FC = () => {
             {/* Free Plan */}
             <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
               <div className="px-6 py-8">
-                <h3 className="text-2xl font-bold text-gray-900">Free</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {t("landing_page.pricing_section.free_plan.title")}
+                </h3>
                 <p className="mt-4 text-gray-600">
-                  For beginners and casual investors
+                  {t("landing_page.pricing_section.free_plan.description")}
                 </p>
                 <p className="mt-8">
                   <span className="text-4xl font-extrabold text-gray-900">
-                    $0
+                    {t("landing_page.pricing_section.free_plan.price")}
                   </span>
                   <span className="text-base font-medium text-gray-500">
-                    /mo
+                    {t("landing_page.pricing_section.free_plan.price_suffix")}
                   </span>
                 </p>
               </div>
@@ -229,7 +224,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Basic financial statement analysis
+                      {t("landing_page.pricing_section.free_plan.li_1")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -237,7 +232,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Limited news sentiment analysis
+                      {t("landing_page.pricing_section.free_plan.li_2")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -245,7 +240,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Community access
+                      {t("landing_page.pricing_section.free_plan.li_3")}
                     </p>
                   </li>
                 </ul>
@@ -254,7 +249,7 @@ const LandingPage: React.FC = () => {
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 border-blue-600"
                   >
-                    Get Started
+                    {t("landing_page.pricing_section.free_plan.cta")}
                   </a>
                 </div>
               </div>
@@ -263,14 +258,20 @@ const LandingPage: React.FC = () => {
             {/* Premium Plan */}
             <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
               <div className="px-6 py-8">
-                <h3 className="text-2xl font-bold text-gray-900">Premium</h3>
-                <p className="mt-4 text-gray-600">For active investors</p>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {t("landing_page.pricing_section.premium_plan.title")}
+                </h3>
+                <p className="mt-4 text-gray-600">
+                  {t("landing_page.pricing_section.premium_plan.description")}
+                </p>
                 <p className="mt-8">
                   <span className="text-4xl font-extrabold text-gray-900">
-                    $25
+                    {t("landing_page.pricing_section.premium_plan.price")}
                   </span>
                   <span className="text-base font-medium text-gray-500">
-                    /mo
+                    {t(
+                      "landing_page.pricing_section.premium_plan.price_suffix"
+                    )}
                   </span>
                 </p>
               </div>
@@ -281,7 +282,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Full access to AI analysis
+                      {t("landing_page.pricing_section.premium_plan.li_1")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -289,7 +290,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Deep financial insights
+                      {t("landing_page.pricing_section.premium_plan.li_2")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -297,7 +298,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      AI-generated earnings summaries
+                      {t("landing_page.pricing_section.premium_plan.li_3")}
                     </p>
                   </li>
                 </ul>
@@ -306,7 +307,7 @@ const LandingPage: React.FC = () => {
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Subscribe
+                    {t("landing_page.pricing_section.premium_plan.cta")}
                   </a>
                 </div>
               </div>
@@ -316,18 +317,20 @@ const LandingPage: React.FC = () => {
             <div className="bg-white overflow-hidden shadow-lg border-2 border-blue-500 rounded-lg divide-y divide-gray-200">
               <div className="px-6 py-8 relative">
                 <span className="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 text-sm font-medium rounded-bl-lg">
-                  Popular
+                  {t("landing_page.pricing_section.popular")}
                 </span>
-                <h3 className="text-2xl font-bold text-gray-900">Pro</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {t("landing_page.pricing_section.pro_plan.title")}
+                </h3>
                 <p className="mt-4 text-gray-600">
-                  For institutional investors
+                  {t("landing_page.pricing_section.pro_plan.description")}
                 </p>
                 <p className="mt-8">
                   <span className="text-4xl font-extrabold text-gray-900">
-                    $79
+                    {t("landing_page.pricing_section.pro_plan.price")}
                   </span>
                   <span className="text-base font-medium text-gray-500">
-                    /mo
+                    {t("landing_page.pricing_section.pro_plan.price_suffix")}
                   </span>
                 </p>
               </div>
@@ -338,7 +341,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Advanced AI-powered analytics
+                      {t("landing_page.pricing_section.pro_plan.li_1")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -346,7 +349,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Real-time financial forecasting
+                      {t("landing_page.pricing_section.pro_plan.li_2")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -354,7 +357,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Custom API access
+                      {t("landing_page.pricing_section.pro_plan.li_3")}
                     </p>
                   </li>
                 </ul>
@@ -363,7 +366,7 @@ const LandingPage: React.FC = () => {
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    Subscribe
+                    {t("landing_page.pricing_section.pro_plan.cta")}
                   </a>
                 </div>
               </div>
@@ -372,11 +375,17 @@ const LandingPage: React.FC = () => {
             {/* Enterprise Plan */}
             <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
               <div className="px-6 py-8">
-                <h3 className="text-2xl font-bold text-gray-900">Enterprise</h3>
-                <p className="mt-4 text-gray-600">For financial institutions</p>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {t("landing_page.pricing_section.enterprise_plan.title")}
+                </h3>
+                <p className="mt-4 text-gray-600">
+                  {t(
+                    "landing_page.pricing_section.enterprise_plan.description"
+                  )}
+                </p>
                 <p className="mt-8">
                   <span className="text-4xl font-extrabold text-gray-900">
-                    Custom
+                    {t("landing_page.pricing_section.enterprise_plan.price")}
                   </span>
                 </p>
               </div>
@@ -387,7 +396,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      White-label solutions
+                      {t("landing_page.pricing_section.enterprise_plan.li_1")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -395,7 +404,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      API integrations
+                      {t("landing_page.pricing_section.enterprise_plan.li_2")}
                     </p>
                   </li>
                   <li className="flex items-start">
@@ -403,7 +412,7 @@ const LandingPage: React.FC = () => {
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
                     <p className="ml-3 text-base text-gray-700">
-                      Dedicated advisory services
+                      {t("landing_page.pricing_section.enterprise_plan.li_3")}
                     </p>
                   </li>
                 </ul>
@@ -412,95 +421,10 @@ const LandingPage: React.FC = () => {
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 border-blue-600"
                   >
-                    Contact Sales
+                    {t("landing_page.pricing_section.enterprise_plan.cta")}
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <div id="testimonials" className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-              Testimonials
-            </h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              What Our Users Say
-            </p>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-12 w-12 rounded-full"
-                    src="/api/placeholder/100/100"
-                    alt="User"
-                  />
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-lg font-bold text-gray-900">
-                    Akira Tanaka
-                  </h4>
-                  <p className="text-gray-600">Individual Investor</p>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-600">
-                "TradEx's AI analysis has completely transformed how I approach
-                the market. I now have access to institutional-grade insights at
-                a fraction of the cost."
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-12 w-12 rounded-full"
-                    src="/api/placeholder/100/100"
-                    alt="User"
-                  />
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-lg font-bold text-gray-900">
-                    Yuki Watanabe
-                  </h4>
-                  <p className="text-gray-600">Portfolio Manager</p>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-600">
-                "The AI-powered insights have given our firm a significant edge
-                in the market. The predictive models have been remarkably
-                accurate in forecasting earnings trends."
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-12 w-12 rounded-full"
-                    src="/api/placeholder/100/100"
-                    alt="User"
-                  />
-                </div>
-                <div className="ml-4">
-                  <h4 className="text-lg font-bold text-gray-900">
-                    Hiroshi Nakamura
-                  </h4>
-                  <p className="text-gray-600">Fintech Developer</p>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-600">
-                "Integrating TradEx's API into our platform was seamless. Our
-                users love the AI-generated insights and it's become our most
-                popular feature."
-              </p>
             </div>
           </div>
         </div>
@@ -510,11 +434,9 @@ const LandingPage: React.FC = () => {
       <div className="bg-blue-600">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            <span className="block">
-              Ready to transform your investment strategy?
-            </span>
+            <span className="block">{t("landing_page.cta_section.title")}</span>
             <span className="block text-blue-200">
-              Join the waitlist today.
+              {t("landing_page.cta_section.subtitle")}
             </span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
@@ -523,7 +445,7 @@ const LandingPage: React.FC = () => {
                 href="#"
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50"
               >
-                Get started
+                {t("landing_page.cta_section.cta")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </div>

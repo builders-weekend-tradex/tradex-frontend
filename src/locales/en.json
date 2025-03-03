@@ -1,0 +1,123 @@
+{
+  "header": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "sign-in": "Sign In"
+  },
+  "landing_page": {
+    "hero": {
+      "title_black": "Revolutionize Your",
+      "title_blue": "Investment Strategy",
+      "subtitle": "TradEx leverages AI-powered insights to provide deep financial analysis, predictive insights, and market intelligence on JAXA-listed companies, bridging the gap between retail and institutional investors.",
+      "placeholder": "Enter your email address",
+      "join": "Join Waitlist"
+    },
+    "feature_section": {
+      "title": "Features",
+      "subtitle": "AI-Powered Fundamental Analysis",
+      "subheading": "Make data-driven investment decisions with our cutting-edge AI technology.",
+      "feature_1": {
+        "title": " Deep Financial Analysis",
+        "description": "Comprehensive analysis of financial statements, earnings reports, and key performance indicators."
+      },
+      "feature_2": {
+        "title": "Predictive Insights",
+        "description": "AI-driven forecasting models to predict stock performance and market trends."
+      },
+      "feature_3": {
+        "title": "LLM-Based Models",
+        "description": "Advanced language models that analyze reports and uncover hidden investment opportunities."
+      },
+      "feature_4": {
+        "title": "Community Insights",
+        "description": "Foster a community of data-driven investors through shared analytics and discussions."
+      },
+      "feature_5": {
+        "title": "Transparent & Trustworthy",
+        "description": "Unbiased and explainable financial insights you can trust for your investment decisions."
+      },
+      "feature_6": {
+        "title": "Real-time Market Intelligence",
+        "description": "Stay ahead with up-to-the-minute financial data and market analysis."
+      }
+    },
+    "pricing_section": {
+      "title": "Pricing",
+      "subtitle": "Plans for Every Investor",
+      "subheading": " From casual investors to professional fund managers, we have a plan that fits your needs.",
+      "free_plan": {
+        "title": "Free",
+        "description": "For beginners and casual investors",
+        "price": "$0",
+        "price_suffix": "/mo",
+        "li_1": "Basic financial statement analysis",
+        "li_2": "Limited news sentiment analysis",
+        "li_3": "Community access",
+        "cta": "Get Started"
+      },
+      "premium_plan": {
+        "title": "Premium",
+        "description": "For active investors",
+        "price": "$25",
+        "price_suffix": "/mo",
+        "li_1": "Full access to AI analysis",
+        "li_2": "Deep financial insights",
+        "li_3": "AI-generated earnings summaries",
+        "cta": "Subscribe"
+      },
+      "pro_plan": {
+        "popular": "Popular",
+        "title": "Pro",
+        "description": "For institutional investors",
+        "price": "$79",
+        "price_suffix": "/mo",
+        "li_1": "Advanced AI-powered analytics",
+        "li_2": "Real-time financial forecasting",
+        "li_3": "Custom API access",
+        "cta": "Subscribe"
+      },
+      "enterprise_plan": {
+        "title": "Enterprise",
+        "description": "For financial institutions",
+        "price": "Custom",
+        "li_1": "White-label solutions",
+        "li_2": "API integrations",
+        "li_3": "Dedicated advisory services",
+        "cta": "Contact Sales"
+      }
+    },
+    "cta_section": {
+      "title": "Ready to transform your investment strategy?",
+      "subtitle": "Join the waitlist today.",
+      "cta": "Get Started"
+    }
+  },
+  "footer": {
+    "sections": {
+      "product": "Product",
+      "resources": "Resources",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "api": "API",
+      "integrations": "Integrations",
+      "documentation": "Documentation",
+      "guides": "Guides",
+      "api_reference": "API Reference",
+      "blog": "Blog",
+      "about": "About",
+      "careers": "Careers",
+      "press": "Press",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookie_policy": "Cookie Policy",
+      "licenses": "Licenses"
+    },
+    "copyright": "© 2025 TradEx. All rights reserved."
+  }
+}
