@@ -4,7 +4,7 @@ import ManagementInfo from "./ManagementInfo";
 
 const FundamentalsTab: React.FC = () => {
   return (
-    <div>
+    <div className="bg-white">
       <h2>Social Tab</h2>
       <AboutCompany />
       <FinancialSheet />

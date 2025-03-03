@@ -4,7 +4,7 @@ import PriceTable from "./PriceTable";
 
 const TechnicalsTab: React.FC = () => {
   return (
-    <div>
+    <div className="bg-white">
       <h2>Technicals Tab</h2>
       <AveragesChart />
       <BuySellChart />

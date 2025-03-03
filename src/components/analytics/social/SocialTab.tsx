@@ -3,7 +3,7 @@ import NewsArticles from "./NewsArticles";
 
 const SocialTab: React.FC = () => {
   return (
-    <div>
+    <div className="bg-white">
       <h2>Social Tab</h2>
       <SentimentScore />
       <NewsArticles />
