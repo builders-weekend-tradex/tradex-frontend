@@ -1,7 +1,7 @@
 const AboutCompany: React.FC = () => {
   return (
     <div>
-      <h1>About Company</h1>
+      <h2>About Company</h2>
     </div>
   );
 };

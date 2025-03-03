@@ -1,7 +1,7 @@
 const FinancialSheet: React.FC = () => {
   return (
     <div>
-      <h1>Financial Sheet</h1>
+      <h2>Financial Sheet</h2>
     </div>
   );
 };

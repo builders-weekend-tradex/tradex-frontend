@@ -1,18 +1,21 @@
 import LanguageSwitcher from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="bg-white shadow-sm w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex justify-between h-16 w-full">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <span className="ml-2 text-2xl font-bold text-blue-800">
-                TradEx
-              </span>
+              <Link to="/">
+                <span className="ml-2 text-2xl font-bold text-blue-800">
+                  TradEx
+                </span>
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <a
@@ -27,6 +30,14 @@ const Header: React.FC = () => {
               >
                 {t("header.pricing")}
               </a>
+              <div>
+                <Link
+                  to="/analytics"
+                  className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                >
+                  Analytics
+                </Link>
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-2">
