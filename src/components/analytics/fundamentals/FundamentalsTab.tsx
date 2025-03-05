@@ -4,8 +4,8 @@ import ManagementInfo from "./ManagementInfo";
 
 const FundamentalsTab: React.FC = () => {
   return (
-    <div className="bg-white">
-      <h2>Social Tab</h2>
+    <div className="bg-white bg-white h-[80vh] overflow-y-auto">
+      <h2>Fundamentals</h2>
       <AboutCompany />
       <FinancialSheet />
       <ManagementInfo />
