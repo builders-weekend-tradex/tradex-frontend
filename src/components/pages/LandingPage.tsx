@@ -198,7 +198,7 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
             {/* Free Plan */}
             <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 flex flex-col h-full ">
               <div className="px-6 py-8">
@@ -218,7 +218,7 @@ const LandingPage: React.FC = () => {
                 </p>
               </div>
               <div className="px-6 py-8 flex flex-col flex-grow">
-                <ul className="space-y-4 mb-6">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
@@ -276,7 +276,7 @@ const LandingPage: React.FC = () => {
                 </p>
               </div>
               <div className="px-6 py-8 flex flex-col flex-grow">
-                <ul className="space-y-4 mb-6">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
@@ -315,7 +315,7 @@ const LandingPage: React.FC = () => {
 
             {/* Pro Plan */}
             <div className="bg-white overflow-hidden shadow-lg border-2 border-blue-500 rounded-lg divide-y divide-gray-200 flex flex-col h-full">
-              <div className="px-6 py-8">
+              <div className="px-6 py-8 relative">
                 <span className="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 text-sm font-medium rounded-bl-lg">
                   {t("landing_page.pricing_section.pro_plan.popular")}
                 </span>
@@ -335,7 +335,7 @@ const LandingPage: React.FC = () => {
                 </p>
               </div>
               <div className="px-6 py-8 flex flex-col flex-grow">
-                <ul className="space-y-4 mb-6">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
@@ -390,7 +390,7 @@ const LandingPage: React.FC = () => {
                 </p>
               </div>
               <div className="px-6 py-8 flex flex-col flex-grow">
-                <ul className="space-y-4 mb-6">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
@@ -432,24 +432,28 @@ const LandingPage: React.FC = () => {
 
       {/* CTA Section */}
       <div className="bg-blue-600">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            <span className="block">{t("landing_page.cta_section.title")}</span>
-            <span className="block text-blue-200">
-              {t("landing_page.cta_section.subtitle")}
-            </span>
-          </h2>
-          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div className="inline-flex rounded-md shadow">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50"
-              >
-                {t("landing_page.cta_section.cta")}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+          {/* <div className="lg:flex lg:items-center lg:space-x-6"> */}
+          <div className="text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              <span className="block">
+                {t("landing_page.cta_section.title")}
+              </span>
+              <span className="block text-blue-200">
+                {t("landing_page.cta_section.subtitle")}
+              </span>
+            </h2>
           </div>
+          <div className="mt-8 text-center">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50"
+            >
+              {t("landing_page.cta_section.cta")}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>
