@@ -200,7 +200,7 @@ const LandingPage: React.FC = () => {
 
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {/* Free Plan */}
-            <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+            <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 flex flex-col h-full ">
               <div className="px-6 py-8">
                 <h3 className="text-2xl font-bold text-gray-900">
                   {t("landing_page.pricing_section.free_plan.title")}
@@ -217,37 +217,37 @@ const LandingPage: React.FC = () => {
                   </span>
                 </p>
               </div>
-              <div className="px-6 py-8">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
+              <div className="px-6 py-8 flex flex-col flex-grow">
+                <ul className="space-y-4 mb-6">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.free_plan.li_1")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.free_plan.li_2")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.free_plan.li_3")}
                     </p>
                   </li>
                 </ul>
-                <div className="mt-8">
+                <div className="mt-auto">
                   <a
                     href="#"
-                    className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 border-blue-600"
+                    className="w-full self-end block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 border-blue-600"
                   >
                     {t("landing_page.pricing_section.free_plan.cta")}
                   </a>
@@ -256,7 +256,7 @@ const LandingPage: React.FC = () => {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+            <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 flex flex-col h-full">
               <div className="px-6 py-8">
                 <h3 className="text-2xl font-bold text-gray-900">
                   {t("landing_page.pricing_section.premium_plan.title")}
@@ -275,34 +275,34 @@ const LandingPage: React.FC = () => {
                   </span>
                 </p>
               </div>
-              <div className="px-6 py-8">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
+              <div className="px-6 py-8 flex flex-col flex-grow">
+                <ul className="space-y-4 mb-6">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.premium_plan.li_1")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.premium_plan.li_2")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.premium_plan.li_3")}
                     </p>
                   </li>
                 </ul>
-                <div className="mt-8">
+                <div className="mt-auto">
                   <a
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
@@ -314,10 +314,10 @@ const LandingPage: React.FC = () => {
             </div>
 
             {/* Pro Plan */}
-            <div className="bg-white overflow-hidden shadow-lg border-2 border-blue-500 rounded-lg divide-y divide-gray-200">
-              <div className="px-6 py-8 relative">
+            <div className="bg-white overflow-hidden shadow-lg border-2 border-blue-500 rounded-lg divide-y divide-gray-200 flex flex-col h-full">
+              <div className="px-6 py-8">
                 <span className="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 text-sm font-medium rounded-bl-lg">
-                  {t("landing_page.pricing_section.popular")}
+                  {t("landing_page.pricing_section.pro_plan.popular")}
                 </span>
                 <h3 className="text-2xl font-bold text-gray-900">
                   {t("landing_page.pricing_section.pro_plan.title")}
@@ -334,34 +334,34 @@ const LandingPage: React.FC = () => {
                   </span>
                 </p>
               </div>
-              <div className="px-6 py-8">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
+              <div className="px-6 py-8 flex flex-col flex-grow">
+                <ul className="space-y-4 mb-6">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.pro_plan.li_1")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.pro_plan.li_2")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.pro_plan.li_3")}
                     </p>
                   </li>
                 </ul>
-                <div className="mt-8">
+                <div className="mt-auto">
                   <a
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
@@ -373,7 +373,7 @@ const LandingPage: React.FC = () => {
             </div>
 
             {/* Enterprise Plan */}
-            <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+            <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 flex flex-col h-full">
               <div className="px-6 py-8">
                 <h3 className="text-2xl font-bold text-gray-900">
                   {t("landing_page.pricing_section.enterprise_plan.title")}
@@ -389,34 +389,34 @@ const LandingPage: React.FC = () => {
                   </span>
                 </p>
               </div>
-              <div className="px-6 py-8">
-                <ul className="space-y-4">
-                  <li className="flex items-start">
+              <div className="px-6 py-8 flex flex-col flex-grow">
+                <ul className="space-y-4 mb-6">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.enterprise_plan.li_1")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.enterprise_plan.li_2")}
                     </p>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       <Star className="h-5 w-5 text-green-500" />
                     </div>
-                    <p className="ml-3 text-base text-gray-700">
+                    <p className="ml-3 text-base text-gray-700 flex-1 text-left">
                       {t("landing_page.pricing_section.enterprise_plan.li_3")}
                     </p>
                   </li>
                 </ul>
-                <div className="mt-8">
+                <div className="mt-auto">
                   <a
                     href="#"
                     className="w-full block text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 border-blue-600"
