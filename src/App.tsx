@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen w-full">
+    <div>
       <Header />
       <main className="flex-1 pt-2 w-full">
         <Outlet />

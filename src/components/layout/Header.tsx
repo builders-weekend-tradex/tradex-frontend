@@ -2,6 +2,7 @@ import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Menu } from "@mui/material";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -15,16 +16,16 @@ const Header: React.FC = () => {
   return (
     <nav className="bg-white shadow-sm w-full">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex justify-between h-16 w-full">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
+        <div className="flex  h-16 w-full">
+          <div className="flex items-center w-full">
+            <div className="flex-shrink-0">
               <Link to="/">
                 <span className="ml-2 text-2xl font-bold text-blue-800">
                   TradEx
                 </span>
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:flex sm:flex-grow sm:ml-6 sm:space-x-8">
               <a
                 href="#features"
                 className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
@@ -42,15 +43,14 @@ const Header: React.FC = () => {
                 to="/analytics"
                 className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
-                Analytics
+                {t("header.analytics")}
               </Link>
-
-              <div className="flex items-center gap-2">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
-                  {t("header.sign-in")}
-                </button>
-                <LanguageSelector />
-              </div>
+            </div>
+            <div className="hidden sm:flex sm:items-center sm:justify-end sm:gap-2">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                {t("header.sign-in")}
+              </button>
+              <LanguageSelector />
             </div>
           </div>
 
@@ -79,7 +79,8 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={`sm:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}>
+      {/* <div className={`sm:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}> */}
+      <Menu open={isMobileMenuOpen} onClose={toggleMobileMenu}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           <a
             href="#features"
@@ -99,12 +100,13 @@ const Header: React.FC = () => {
           >
             Analytics
           </Link>
-          <button className="text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium">
+          <button className="ml-auto mr-auto text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium">
             {t("header.sign-in")}
           </button>
           <LanguageSelector />
         </div>
-      </div>
+      </Menu>
+      {/* </div> */}
     </nav>
   );
 };
