@@ -1,7 +1,7 @@
 const NewsArticles: React.FC = () => {
   return (
     <div className="pl-3 md:w-2/3 h-[10px] overflow-y-auto">
-      <h2 className="text-gray-900 text-4xl font-bold text-left ">News</h2>
+      <h2 className="text-gray-900 text-2xl font-bold text-left ">News</h2>
       <div className="bg-light min-h-screen overflow-y-auto">
         <h3 className="text-gray-900 text-2xl text-left ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}

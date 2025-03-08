@@ -96,14 +96,15 @@ const Header: React.FC = () => {
           paper: {
             sx: {
               width: "200px",
-              textAlign: "left",
-              boxShadow: 3,
+              textAlign: "right",
               paddingY: 1,
               paddingX: 1,
+              marginTop: 6,
+              // marginRight: 10,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between", // Ensures space between items
-              height: "auto", // Ensures the menu expands with content
+              justifyContent: "space-between",
+              height: "auto",
             },
           },
         }}
@@ -136,22 +137,26 @@ const Header: React.FC = () => {
         </MenuItem>
 
         <MenuItem onClick={toggleMobileMenu}>
-          <button className="text-gray-600 hover:text-gray-900 text-left w-full">
+          <button className="text-gray-600 hover:text-gray-900 text-right w-full">
             {t("header.sign-in")}
           </button>
         </MenuItem>
-        <div className="flex-grow">
+        <div className="flex justify-end space-x-2">
           <MenuItem>
             <button
-              className="text-gray-600 hover:text-gray-900 text-right w-full"
+              className="text-gray-600 text-sm hover:text-gray-900 text-right w-full"
               onClick={() => changeLanguage("en")}
             >
               EN
             </button>
           </MenuItem>
+          <span className="text-gray-600 text-right text-sm flex items-center">
+            {" "}
+            /{" "}
+          </span>
           <MenuItem>
             <button
-              className="text-gray-600 hover:text-gray-900 text-right w-full"
+              className="text-gray-600 text-sm hover:text-gray-900 text-right w-full"
               onClick={() => changeLanguage("ja")}
             >
               JA

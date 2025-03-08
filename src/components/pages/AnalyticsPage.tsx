@@ -42,7 +42,7 @@ const AnalyticsPage: React.FC = () => {
           Technicals
         </button>
       </div>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-white">
         {activeTab === "social" && <SocialTab />}
         {activeTab === "fundamentals" && <FundamentalsTab />}
         {activeTab === "technicals" && <TechnicalsTab />}

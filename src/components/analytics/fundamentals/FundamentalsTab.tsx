@@ -4,8 +4,7 @@ import ManagementInfo from "./ManagementInfo";
 
 const FundamentalsTab: React.FC = () => {
   return (
-    <div className="bg-white bg-white h-[80vh] overflow-y-auto">
-      <h2>Fundamentals</h2>
+    <div>
       <AboutCompany />
       <FinancialSheet />
       <ManagementInfo />
