@@ -3,6 +3,7 @@
     "features": "Features",
     "pricing": "Pricing",
     "testimonials": "Testimonials",
+    "analytics": "Analytics",
     "sign-in": "Sign In"
   },
   "landing_page": {
@@ -118,6 +119,6 @@
       "cookie_policy": "Cookie Policy",
       "licenses": "Licenses"
     },
-    "copyright": "© 2025 TradEx. All rights reserved."
+    "copyright": "2025 TradEx."
   }
 }

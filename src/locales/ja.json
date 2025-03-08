@@ -3,6 +3,7 @@
     "features": "特徴",
     "pricing": "価格",
     "testimonials": "お客様の声",
+    "analytics": "分析",
     "sign-in": "サインイン"
   },
   "landing_page": {
@@ -118,6 +119,6 @@
       "cookie_policy": "クッキーポリシー",
       "licenses": "ライセンス"
     },
-    "copyright": "© 2025 TradEx. 無断転載を禁じます。"
+    "copyright": "2025 TradEx."
   }
 }
