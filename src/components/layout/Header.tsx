@@ -2,7 +2,7 @@ import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -11,6 +11,12 @@ const Header: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
   };
 
   return (
@@ -79,34 +85,80 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <div className={`sm:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}> */}
-      <Menu open={isMobileMenuOpen} onClose={toggleMobileMenu}>
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="#features"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+      <Menu
+        anchorOrigin={{
+          horizontal: "right",
+          vertical: "top",
+        }}
+        open={Boolean(isMobileMenuOpen)}
+        onClose={toggleMobileMenu}
+        slotProps={{
+          paper: {
+            sx: {
+              width: "200px",
+              textAlign: "left",
+              boxShadow: 3,
+              paddingY: 1,
+              paddingX: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between", // Ensures space between items
+              height: "auto", // Ensures the menu expands with content
+            },
+          },
+        }}
+      >
+        <MenuItem onClick={toggleMobileMenu}>
+          <Link
+            to="#features"
+            className="text-gray-600 hover:text-gray-900 w-full"
           >
             {t("header.features")}
-          </a>
-          <a
-            href="#pricing"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+          </Link>
+        </MenuItem>
+
+        <MenuItem onClick={toggleMobileMenu}>
+          <Link
+            to="#pricing"
+            className="text-gray-600 hover:text-gray-900 w-full"
           >
             {t("header.pricing")}
-          </a>
+          </Link>
+        </MenuItem>
+
+        <MenuItem onClick={toggleMobileMenu}>
           <Link
             to="/analytics"
-            className="text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium"
+            className="text-gray-600 hover:text-gray-900 w-full"
           >
-            Analytics
+            {t("header.analytics")}
           </Link>
-          <button className="ml-auto mr-auto text-gray-600 hover:text-gray-900 block px-3 py-2 text-base font-medium">
+        </MenuItem>
+
+        <MenuItem onClick={toggleMobileMenu}>
+          <button className="text-gray-600 hover:text-gray-900 text-left w-full">
             {t("header.sign-in")}
           </button>
-          <LanguageSelector />
+        </MenuItem>
+        <div className="flex-grow">
+          <MenuItem>
+            <button
+              className="text-gray-600 hover:text-gray-900 text-right w-full"
+              onClick={() => changeLanguage("en")}
+            >
+              EN
+            </button>
+          </MenuItem>
+          <MenuItem>
+            <button
+              className="text-gray-600 hover:text-gray-900 text-right w-full"
+              onClick={() => changeLanguage("ja")}
+            >
+              JA
+            </button>
+          </MenuItem>
         </div>
       </Menu>
-      {/* </div> */}
     </nav>
   );
 };
