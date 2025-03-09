@@ -7,6 +7,10 @@ import { ActiveTab } from "../../types/ActiveTabEnum";
 const AnalyticsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>(ActiveTab.Social);
 
+  const handleSetActiveTab = (tab: ActiveTab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div className="w-full">
       <div className="flex space-x-1">
@@ -16,7 +20,7 @@ const AnalyticsPage: React.FC = () => {
               ? "bg-white text-gray-700"
               : "bg-gray-200 text-gray-700"
           }`}
-          onClick={() => setActiveTab(ActiveTab.Social)}
+          onClick={() => handleSetActiveTab(ActiveTab.Social)}
         >
           Social
         </button>
@@ -26,7 +30,7 @@ const AnalyticsPage: React.FC = () => {
               ? "bg-white text-gray-700"
               : "bg-gray-200 text-gray-700"
           }`}
-          onClick={() => setActiveTab(ActiveTab.Fundamentals)}
+          onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
         >
           Fundamentals
         </button>
@@ -36,7 +40,7 @@ const AnalyticsPage: React.FC = () => {
               ? "bg-white text-gray-700"
               : "bg-gray-200 text-gray-700"
           }`}
-          onClick={() => setActiveTab(ActiveTab.Technicals)}
+          onClick={() => handleSetActiveTab(ActiveTab.Technicals)}
         >
           Technicals
         </button>
