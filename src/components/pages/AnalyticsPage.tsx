@@ -3,8 +3,10 @@ import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
 import TechnicalsTab from "../analytics/technicals/TechnicalsTab";
 import { useState } from "react";
 import { ActiveTab } from "../../types/ActiveTabEnum";
+import { useTranslation } from "react-i18next";
 
 const AnalyticsPage: React.FC = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<ActiveTab>(ActiveTab.Social);
 
   const handleSetActiveTab = (tab: ActiveTab) => {
@@ -22,7 +24,7 @@ const AnalyticsPage: React.FC = () => {
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.Social)}
         >
-          Social
+          {t("analytics_page.tabs.social")}
         </button>
         <button
           className={`px-4 py-2 hover:bg-gray-100 rounded-t-lg focus:outline-none ${
@@ -32,7 +34,7 @@ const AnalyticsPage: React.FC = () => {
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
         >
-          Fundamentals
+          {t("analytics_page.tabs.fundamentals")}
         </button>
         <button
           className={`px-4 py-2 hover:bg-gray-100 rounded-t-lg focus:outline-none ${
@@ -42,7 +44,7 @@ const AnalyticsPage: React.FC = () => {
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.Technicals)}
         >
-          Technicals
+          {t("analytics_page.tabs.technicals")}
         </button>
       </div>
       <div className="min-h-screen bg-white">
