@@ -2,7 +2,6 @@ import { useState } from "react";
 import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Menu, MenuItem } from "@mui/material";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -13,6 +12,10 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   const { i18n } = useTranslation();
 
   const changeLanguage = (code: string) => {
@@ -20,7 +23,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="bg-white shadow-sm w-full">
+    <nav className="relative bg-white shadow-sm w-full">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex  h-16 w-full">
           <div className="flex items-center w-full">
@@ -85,85 +88,63 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-      <Menu
-        anchorOrigin={{
-          horizontal: "right",
-          vertical: "top",
-        }}
-        open={Boolean(isMobileMenuOpen)}
-        onClose={toggleMobileMenu}
-        slotProps={{
-          paper: {
-            sx: {
-              width: "200px",
-              textAlign: "right",
-              paddingY: 1,
-              paddingX: 1,
-              marginTop: 6,
-              // marginRight: 10,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "auto",
-            },
-          },
-        }}
-      >
-        <MenuItem onClick={toggleMobileMenu}>
-          <Link
-            to="#features"
-            className="text-gray-600 hover:text-gray-900 w-full"
-          >
-            {t("header.features")}
-          </Link>
-        </MenuItem>
-
-        <MenuItem onClick={toggleMobileMenu}>
-          <Link
-            to="#pricing"
-            className="text-gray-600 hover:text-gray-900 w-full"
-          >
-            {t("header.pricing")}
-          </Link>
-        </MenuItem>
-
-        <MenuItem onClick={toggleMobileMenu}>
-          <Link
-            to="/analytics"
-            className="text-gray-600 hover:text-gray-900 w-full"
-          >
-            {t("header.analytics")}
-          </Link>
-        </MenuItem>
-
-        <MenuItem onClick={toggleMobileMenu}>
-          <button className="text-gray-600 hover:text-gray-900 text-right w-full">
-            {t("header.sign-in")}
-          </button>
-        </MenuItem>
-        <div className="flex justify-end space-x-2">
-          <MenuItem>
-            <button
-              className="text-gray-600 text-sm hover:text-gray-900 text-right w-full"
-              onClick={() => changeLanguage("en")}
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="w-full absolute left-0 bg-white shadow-md z-50 p-4 border-t border-gray-200">
+          <div className="flex flex-col space-y-4">
+            <a
+              href="#features"
+              className="text-gray-600 hover:text-gray-900"
+              onClick={closeMobileMenu}
             >
-              English
-            </button>
-          </MenuItem>
-          <span className="text-gray-600 text-right text-sm flex items-center">
-            {" "}
-            /{" "}
-          </span>
-          <MenuItem>
-            <button
-              className="text-gray-600 text-sm hover:text-gray-900 text-right w-full"
-              onClick={() => changeLanguage("ja")}
+              {t("header.features")}
+            </a>
+            <a
+              href="#pricing"
+              className="text-gray-600 hover:text-gray-900"
+              onClick={closeMobileMenu}
             >
-              日本語
+              {t("header.pricing")}
+            </a>
+            <Link
+              to="/analytics"
+              className="text-gray-600 hover:text-gray-900"
+              onClick={closeMobileMenu}
+            >
+              {t("header.analytics")}
+            </Link>
+            <button
+              className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600"
+              onClick={closeMobileMenu}
+            >
+              {t("header.sign-in")}
             </button>
-          </MenuItem>
+
+            {/* Language Selector */}
+            <div className="flex justify-center space-x-4 border-t pt-4">
+              <button
+                className="text-gray-600 text-sm hover:text-gray-900"
+                onClick={() => {
+                  changeLanguage("en");
+                  closeMobileMenu();
+                }}
+              >
+                English
+              </button>
+              <span className="text-gray-600 text-sm">/</span>
+              <button
+                className="text-gray-600 text-sm hover:text-gray-900"
+                onClick={() => {
+                  changeLanguage("ja");
+                  closeMobileMenu();
+                }}
+              >
+                日本語
+              </button>
+            </div>
+          </div>
         </div>
-      </Menu>
+      )}
     </nav>
   );
 };
