@@ -1,3 +1,4 @@
+import { Fragment, useState } from "react";
 import {
   Menu,
   Transition,
@@ -5,7 +6,6 @@ import {
   MenuItems,
   MenuItem,
 } from "@headlessui/react";
-import { Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 

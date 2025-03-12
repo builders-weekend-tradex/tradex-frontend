@@ -9,9 +9,8 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="flex-1 pt-2 w-full">
-        <Outlet />
-      </main>
+      {/* Outlet will update dynamically based on the current route */}
+      <Outlet />
       <Footer />
     </div>
   );

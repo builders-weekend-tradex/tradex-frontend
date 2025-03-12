@@ -1,7 +1,7 @@
+import { useState } from "react";
 import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { Menu, MenuItem } from "@mui/material";
 
 const Header: React.FC = () => {
@@ -147,7 +147,7 @@ const Header: React.FC = () => {
               className="text-gray-600 text-sm hover:text-gray-900 text-right w-full"
               onClick={() => changeLanguage("en")}
             >
-              EN
+              English
             </button>
           </MenuItem>
           <span className="text-gray-600 text-right text-sm flex items-center">
@@ -159,7 +159,7 @@ const Header: React.FC = () => {
               className="text-gray-600 text-sm hover:text-gray-900 text-right w-full"
               onClick={() => changeLanguage("ja")}
             >
-              JA
+              日本語
             </button>
           </MenuItem>
         </div>
