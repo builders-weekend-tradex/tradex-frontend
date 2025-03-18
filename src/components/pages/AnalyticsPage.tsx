@@ -2,7 +2,7 @@ import { useState } from "react";
 import SocialTab from "../analytics/social/SocialTab";
 import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
 import TechnicalsTab from "../analytics/technicals/TechnicalsTab";
-import { ActiveTab } from "../../types/ActiveTabEnum";
+import { ActiveTab } from "../../types/enums";
 import { useTranslation } from "react-i18next";
 
 const AnalyticsPage: React.FC = () => {

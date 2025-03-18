@@ -112,7 +112,8 @@
     "technicals": {
       "averages_chart": "Averages Chart!",
       "buy_sell_chart": "Buy Sell Chart!",
-      "price_table": "Price Table!"
+      "price_table": "Price Table!",
+      "technical_analysis": "Technical Analysis!"
     }
   },
   "footer": {
