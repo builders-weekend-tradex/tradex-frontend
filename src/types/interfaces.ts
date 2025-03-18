@@ -39,4 +39,7 @@ export interface WilliamsChartProps {
   symbol: string;
 }
 
-// "../../../../types/interfaces";
+export interface ChartComponentProps {
+  symbol: string;
+  chartName: string;
+}
