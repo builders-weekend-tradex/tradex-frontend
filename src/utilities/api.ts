@@ -24,10 +24,10 @@ export const fetchSingleChart = async (chartName: string, symbol: string) => {
     `${API_BASE_URL}/analysis/tech/charts/${chartName}?symbol=${symbol}`
   );
   if (!response.ok) throw new Error("Chart not found");
-  return await response.text(); // HTML content response
+  return await response.text(); // Assuming the response is HTML
 };
-
 // Fetch Social News
+
 export const fetchNews = async (symbol: string) => {
   const response = await fetch(
     `${API_BASE_URL}/analysis/social/news/everything/?symbol=${symbol}`

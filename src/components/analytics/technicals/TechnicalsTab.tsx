@@ -8,7 +8,12 @@ const TechnicalsTab: React.FC = () => {
     <div>
       <AveragesChart />
       <BuySellChart />
-      <PriceTable />
+      <div className="bg-white min-h-full">
+        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+
+        {/* Render the PriceTable component for GOOG */}
+        <PriceTable symbol="GOOG" />
+      </div>
       <TechnicalAnalysis />
     </div>
   );
