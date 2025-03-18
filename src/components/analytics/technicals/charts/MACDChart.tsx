@@ -1,13 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { MACDChartProps } from "../../../../types/interfaces";
 
-interface StochasticOscillatorChartProps {
-  symbol: string;
-}
-
-const StochasticOscillatorChart: React.FC<StochasticOscillatorChartProps> = ({
-  symbol,
-}) => {
+const MACDChart: React.FC<MACDChartProps> = ({ symbol }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -16,10 +11,7 @@ const StochasticOscillatorChart: React.FC<StochasticOscillatorChartProps> = ({
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart(
-          "stochastic_oscillator_plot",
-          symbol
-        );
+        const response = await fetchSingleChart("macd", symbol);
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -61,4 +53,4 @@ const StochasticOscillatorChart: React.FC<StochasticOscillatorChartProps> = ({
   );
 };
 
-export default StochasticOscillatorChart;
+export default MACDChart;

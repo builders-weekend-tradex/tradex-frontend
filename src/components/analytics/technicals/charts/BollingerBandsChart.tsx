@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { BollingerBandsChartProps } from "../../../../types/interfaces";
 
-interface WilliamsChartProps {
-  symbol: string;
-}
-
-const WilliamsChart: React.FC<WilliamsChartProps> = ({ symbol }) => {
+const BollingerBandsChart: React.FC<BollingerBandsChartProps> = ({
+  symbol,
+}) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +13,7 @@ const WilliamsChart: React.FC<WilliamsChartProps> = ({ symbol }) => {
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart("williams_r_plot", symbol);
+        const response = await fetchSingleChart("bollinger_bands_plot", symbol);
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -56,4 +55,4 @@ const WilliamsChart: React.FC<WilliamsChartProps> = ({ symbol }) => {
   );
 };
 
-export default WilliamsChart;
+export default BollingerBandsChart;

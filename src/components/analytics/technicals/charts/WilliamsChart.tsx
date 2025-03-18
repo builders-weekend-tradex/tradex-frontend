@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { WilliamsChartProps } from "../../../../types/interfaces";
 
-interface PriceTableProps {
-  symbol: string;
-}
-
-const PriceTrendChart: React.FC<PriceTableProps> = ({ symbol }) => {
+const WilliamsChart: React.FC<WilliamsChartProps> = ({ symbol }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +11,7 @@ const PriceTrendChart: React.FC<PriceTableProps> = ({ symbol }) => {
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart("price_trend", symbol);
+        const response = await fetchSingleChart("williams_r_plot", symbol);
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -56,4 +53,4 @@ const PriceTrendChart: React.FC<PriceTableProps> = ({ symbol }) => {
   );
 };
 
-export default PriceTrendChart;
+export default WilliamsChart;

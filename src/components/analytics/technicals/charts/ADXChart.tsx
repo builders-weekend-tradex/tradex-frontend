@@ -1,13 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { ADXChartProps } from "../../../../types/interfaces";
 
-interface BollingerBandsChartProps {
-  symbol: string;
-}
-
-const BollingerBandsChart: React.FC<BollingerBandsChartProps> = ({
-  symbol,
-}) => {
+const ADXChart: React.FC<ADXChartProps> = ({ symbol }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +11,7 @@ const BollingerBandsChart: React.FC<BollingerBandsChartProps> = ({
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart("bollinger_bands_plot", symbol);
+        const response = await fetchSingleChart("adx_plot", symbol);
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -58,4 +53,4 @@ const BollingerBandsChart: React.FC<BollingerBandsChartProps> = ({
   );
 };
 
-export default BollingerBandsChart;
+export default ADXChart;

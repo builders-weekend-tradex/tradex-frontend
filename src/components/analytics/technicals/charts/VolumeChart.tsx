@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { VolumeChartProps } from "../../../../types/interfaces";
 
-interface MACDChartProps {
-  symbol: string;
-}
-
-const MACDChart: React.FC<MACDChartProps> = ({ symbol }) => {
+const VolumeChart: React.FC<VolumeChartProps> = ({ symbol }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +11,10 @@ const MACDChart: React.FC<MACDChartProps> = ({ symbol }) => {
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart("macd", symbol);
+        const response = await fetchSingleChart(
+          "on_balance_volume_chart",
+          symbol
+        );
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -56,4 +56,4 @@ const MACDChart: React.FC<MACDChartProps> = ({ symbol }) => {
   );
 };
 
-export default MACDChart;
+export default VolumeChart;

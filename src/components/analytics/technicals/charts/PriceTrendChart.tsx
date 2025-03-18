@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { PriceTableProps } from "../../../../types/interfaces";
 
-interface CMFChartProps {
-  symbol: string;
-}
-
-const CMFChart: React.FC<CMFChartProps> = ({ symbol }) => {
+const PriceTrendChart: React.FC<PriceTableProps> = ({ symbol }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +11,7 @@ const CMFChart: React.FC<CMFChartProps> = ({ symbol }) => {
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart("adx_plot", symbol);
+        const response = await fetchSingleChart("price_trend", symbol);
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -56,4 +53,4 @@ const CMFChart: React.FC<CMFChartProps> = ({ symbol }) => {
   );
 };
 
-export default CMFChart;
+export default PriceTrendChart;

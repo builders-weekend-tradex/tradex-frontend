@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
-
-interface RSIChartProps {
-  symbol: string;
-}
+import { fetchSingleChart } from "../../../../utilities/api";
+import { RSIChartProps } from "../../../../types/interfaces";
 
 const RSIChart: React.FC<RSIChartProps> = ({ symbol }) => {
   const [chartHtml, setChartHtml] = useState<string>("");

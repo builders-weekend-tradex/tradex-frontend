@@ -1,13 +1,13 @@
-import MACDChart from "./MACDChart";
-import PriceTrendChart from "./PriceTrendChart";
+import MACDChart from "./charts/MACDChart";
+import PriceTrendChart from "./charts/PriceTrendChart";
+import VolumeChart from "./charts/VolumeChart";
+import RSIChart from "./charts/RSIChart";
+import BollingerBandsChart from "./charts/BollingerBandsChart";
+import StochasticOscillatorChart from "./charts/StochasticOscillatorChart";
+import WilliamsChart from "./charts/WilliamsChart";
+import ADXChart from "./charts/ADXChart";
+import CMFChart from "./charts/CMFChart";
 import TechnicalAnalysis from "./TechnicalAnalysis";
-import VolumeChart from "./VolumeChart";
-import RSIChart from "./RSIChart";
-import BollingerBandsChart from "./BollingerBandsChart";
-import StochasticOscillatorChart from "./StochasticOscillatorChart";
-import WilliamsChart from "./WilliamsChart";
-import ADXChart from "./ADXChart";
-import CMFChart from "./CMFChart";
 
 const TechnicalsTab: React.FC = () => {
   return (

@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
+import { StochasticOscillatorChartProps } from "../../../../types/interfaces";
 
-interface ADXChartProps {
-  symbol: string;
-}
-
-const ADXChart: React.FC<ADXChartProps> = ({ symbol }) => {
+const StochasticOscillatorChart: React.FC<StochasticOscillatorChartProps> = ({
+  symbol,
+}) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +13,10 @@ const ADXChart: React.FC<ADXChartProps> = ({ symbol }) => {
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart("adx_plot", symbol);
+        const response = await fetchSingleChart(
+          "stochastic_oscillator_plot",
+          symbol
+        );
         setChartHtml(response); // Save the HTML content
       } catch {
         setError("Failed to load chart.");
@@ -56,4 +58,4 @@ const ADXChart: React.FC<ADXChartProps> = ({ symbol }) => {
   );
 };
 
-export default ADXChart;
+export default StochasticOscillatorChart;
