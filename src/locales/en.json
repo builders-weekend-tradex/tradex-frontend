@@ -104,7 +104,8 @@
       "social": "Social",
       "fundamentals": "Fundamentals",
       "technicals": "Technicals",
-      "lexi_chat": "Lexi Chat"
+      "lexi_chat": "Lexi Chat",
+      "ticker_input": "Ticker"
     },
     "socials": {
       "news": "News",
