@@ -3,4 +3,5 @@ export enum ActiveTab {
   Fundamentals = "FUNDAMENTALS",
   Technicals = "TECHNICALS",
   LexiChat = "LEXI_CHAT",
+  TickerInput = "TICKER",
 }
