@@ -4,6 +4,7 @@ import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
 import TechnicalsTab from "../analytics/technicals/TechnicalsTab";
 import { ActiveTab } from "../../types/enums";
 import { useTranslation } from "react-i18next";
+import TickerInput from "../analytics/TickerInput";
 
 const AnalyticsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -15,6 +16,7 @@ const AnalyticsPage: React.FC = () => {
 
   return (
     <div className="w-full pt-2">
+      <TickerInput />
       <div className="flex space-x-1">
         <button
           className={`px-4 py-2 hover:bg-gray-100 rounded-t-lg focus:outline-none ${

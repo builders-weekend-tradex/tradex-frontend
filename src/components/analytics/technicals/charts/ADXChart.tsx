@@ -1,7 +1,7 @@
 import ChartComponent from "./ChartComponent";
 import { ADXChartProps } from "../../../../types/interfaces";
 
-const ADXChart: React.FC<ADXChartProps> = ({ symbol }: { symbol: string }) => (
+const ADXChart: React.FC<ADXChartProps> = ({ symbol }) => (
   <ChartComponent symbol={symbol} chartName="adx_plot" />
 );
 

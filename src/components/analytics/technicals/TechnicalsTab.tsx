@@ -13,60 +13,56 @@ const TechnicalsTab: React.FC = () => {
   return (
     <div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
-
-        {/* Render the PriceTable component for GOOG */}
+        <h2 className="text-lg text-gray-800 font-semibold">Price Trend</h2>
         <PriceTrendChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
-
-        {/* Render the PriceTable component for GOOG */}
+        <h2 className="text-lg text-gray-800 font-semibold">Volume</h2>
         <VolumeChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">MACD</h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <MACDChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">RSI</h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <RSIChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">Bollinger Bands</h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <BollingerBandsChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">
+          Stochastic Oscillator
+        </h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <StochasticOscillatorChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">Williams</h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <WilliamsChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">ADX</h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <ADXChart symbol="GOOG" />
       </div>
       <div className="bg-white min-h-full">
-        <h2 className="text-lg font-semibold">Technical Analysis</h2>
+        <h2 className="text-lg text-gray-800 font-semibold">CMF</h2>
 
-        {/* Render the PriceTable component for GOOG */}
         <CMFChart symbol="GOOG" />
       </div>
-      <TechnicalAnalysis />
+      <div className="bg-white min-h-full">
+        <h2 className="text-lg text-gray-800 font-semibold">
+          Technical Analysis
+        </h2>
+        <TechnicalAnalysis />
+      </div>
     </div>
   );
 };
