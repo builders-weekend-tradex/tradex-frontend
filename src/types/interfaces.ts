@@ -43,3 +43,8 @@ export interface ChartComponentProps {
   symbol: string;
   chartName: string;
 }
+
+export interface TickerContextType {
+  symbol: string;
+  setSymbol: (newSymbol: string) => void;
+}

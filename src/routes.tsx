@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import LandingPage from "./components/pages/LandingPage";
 import AnalyticsPage from "./components/pages/AnalyticsPage";
-import { TickerProvider } from "./context/TickerContext";
+import { TickerProvider } from "./context/TickerProvider";
 
 export const router = createBrowserRouter([
   {
