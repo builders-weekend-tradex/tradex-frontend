@@ -4,10 +4,10 @@ import { TickerContext } from "../context/TickerContext";
 export const TickerProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [symbol, setSymbol] = useState("GOOG"); // Default ticker
+  const [ticker, setTicker] = useState("GOOG"); // Default ticker
 
   return (
-    <TickerContext.Provider value={{ symbol, setSymbol }}>
+    <TickerContext.Provider value={{ ticker, setTicker }}>
       {children}
     </TickerContext.Provider>
   );

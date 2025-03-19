@@ -14,48 +14,48 @@ const TechnicalsTab: React.FC = () => {
     <div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">Price Trend</h2>
-        <PriceTrendChart symbol="GOOG" />
+        <PriceTrendChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">Volume</h2>
-        <VolumeChart symbol="GOOG" />
+        <VolumeChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">MACD</h2>
 
-        <MACDChart symbol="GOOG" />
+        <MACDChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">RSI</h2>
 
-        <RSIChart symbol="GOOG" />
+        <RSIChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">Bollinger Bands</h2>
 
-        <BollingerBandsChart symbol="GOOG" />
+        <BollingerBandsChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">
           Stochastic Oscillator
         </h2>
 
-        <StochasticOscillatorChart symbol="GOOG" />
+        <StochasticOscillatorChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">Williams</h2>
 
-        <WilliamsChart symbol="GOOG" />
+        <WilliamsChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">ADX</h2>
 
-        <ADXChart symbol="GOOG" />
+        <ADXChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">CMF</h2>
 
-        <CMFChart symbol="GOOG" />
+        <CMFChart />
       </div>
       <div className="bg-white min-h-full">
         <h2 className="text-lg text-gray-800 font-semibold">

@@ -1,8 +1,9 @@
 import ChartComponent from "./ChartComponent";
-import { ADXChartProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const ADXChart: React.FC<ADXChartProps> = ({ symbol }) => (
-  <ChartComponent symbol={symbol} chartName="adx_plot" />
-);
+const ADXChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return <ChartComponent ticker={ticker} chartName="adx_plot" />;
+};
 
 export default ADXChart;

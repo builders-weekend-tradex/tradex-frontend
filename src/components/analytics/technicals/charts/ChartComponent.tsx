@@ -3,7 +3,7 @@ import { fetchSingleChart } from "../../../../utilities/api";
 import { ChartComponentProps } from "../../../../types/interfaces";
 
 const ChartComponent: React.FC<ChartComponentProps> = ({
-  symbol,
+  ticker,
   chartName,
 }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
@@ -14,7 +14,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   useEffect(() => {
     const loadChart = async () => {
       try {
-        const response = await fetchSingleChart(chartName, symbol);
+        const response = await fetchSingleChart(chartName, ticker);
         setChartHtml(response);
       } catch {
         setError("Failed to load chart.");
@@ -24,7 +24,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
     };
 
     loadChart();
-  }, [symbol, chartName]);
+  }, [ticker, chartName]);
 
   useEffect(() => {
     if (chartHtml && chartContainerRef.current) {

@@ -1,8 +1,9 @@
 import ChartComponent from "./ChartComponent";
-import { RSIChartProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const RSIChart: React.FC<RSIChartProps> = ({ symbol }) => (
-  <ChartComponent symbol={symbol} chartName="rsi" />
-);
+const RSIChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return <ChartComponent ticker={ticker} chartName="rsi" />;
+};
 
 export default RSIChart;

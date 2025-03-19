@@ -1,8 +1,9 @@
 import ChartComponent from "./ChartComponent";
-import { VolumeChartProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const VolumeChart: React.FC<VolumeChartProps> = ({ symbol }) => (
-  <ChartComponent symbol={symbol} chartName="on_balance_volume_chart" />
-);
+const VolumeChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return <ChartComponent ticker={ticker} chartName="on_balance_volume_chart" />;
+};
 
 export default VolumeChart;

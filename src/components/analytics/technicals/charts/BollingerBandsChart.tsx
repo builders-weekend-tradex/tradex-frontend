@@ -1,8 +1,8 @@
 import ChartComponent from "./ChartComponent";
-import { BollingerBandsChartProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const BollingerBandsChart: React.FC<BollingerBandsChartProps> = ({
-  symbol,
-}) => <ChartComponent symbol={symbol} chartName="bollinger_bands_plot" />;
-
+const BollingerBandsChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return <ChartComponent ticker={ticker} chartName="bollinger_bands_plot" />;
+};
 export default BollingerBandsChart;

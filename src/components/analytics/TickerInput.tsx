@@ -1,21 +1,17 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useTicker } from "../../hooks/useTicker";
 
-const TickerInput: React.FC = () => {
-  const [ticker, setTicker] = useState<string>("");
-  const navigate = useNavigate();
+const TickerInput = () => {
+  const { ticker, setTicker } = useTicker(); // Use global ticker state
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTicker(e.target.value);
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    navigate(`/analytics/${ticker}`);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTicker(event.target.value.toUpperCase());
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+      <label htmlFor="ticker" className="text-lg font-medium">
+        Ticker:
+      </label>
       <input
         type="text"
         placeholder="Enter a ticker symbol"
@@ -23,7 +19,7 @@ const TickerInput: React.FC = () => {
         onChange={handleChange}
       />
       <button type="submit">Submit</button>
-    </form>
+    </div>
   );
 };
 

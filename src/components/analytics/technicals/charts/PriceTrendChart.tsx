@@ -1,8 +1,9 @@
 import ChartComponent from "./ChartComponent";
-import { PriceTableProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const PriceTrendChart: React.FC<PriceTableProps> = ({ symbol }) => (
-  <ChartComponent symbol={symbol} chartName="price_trend" />
-);
+const PriceTrendChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return <ChartComponent ticker={ticker} chartName="price_trend" />;
+};
 
 export default PriceTrendChart;

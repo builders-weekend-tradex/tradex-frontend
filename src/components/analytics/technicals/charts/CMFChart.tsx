@@ -1,8 +1,9 @@
 import ChartComponent from "./ChartComponent";
-import { CMFChartProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const CMFChart: React.FC<CMFChartProps> = ({ symbol }) => (
-  <ChartComponent symbol={symbol} chartName="cmf" />
-);
+const CMFChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return <ChartComponent ticker={ticker} chartName="cmf" />;
+};
 
 export default CMFChart;

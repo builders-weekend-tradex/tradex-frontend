@@ -1,8 +1,10 @@
 import ChartComponent from "./ChartComponent";
-import { StochasticOscillatorChartProps } from "../../../../types/interfaces";
+import { useTicker } from "../../../../hooks/useTicker";
 
-const StochasticOscillatorChart: React.FC<StochasticOscillatorChartProps> = ({
-  symbol,
-}) => <ChartComponent symbol={symbol} chartName="stochastic_oscillator_plot" />;
-
+const StochasticOscillatorChart: React.FC = () => {
+  const { ticker } = useTicker();
+  return (
+    <ChartComponent ticker={ticker} chartName="stochastic_oscillator_plot" />
+  );
+};
 export default StochasticOscillatorChart;
