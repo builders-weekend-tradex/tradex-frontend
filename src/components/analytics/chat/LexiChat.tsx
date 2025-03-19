@@ -1,28 +1,30 @@
 import { useState } from "react";
 import { chatWithLexi } from "../../../utilities/api";
+import { useTranslation } from "react-i18next";
 
 const LexiChat: React.FC = () => {
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState<
+  const [newMessage, setNewMessage] = useState("");
+  const [allMessages, setAllMessages] = useState<
     { sender: string; content: string }[]
   >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const handleSendMessage = async () => {
-    if (!message.trim()) return;
+    if (!newMessage.trim()) return;
 
-    setMessages((prevMessages) => [
+    setAllMessages((prevMessages) => [
       ...prevMessages,
-      { sender: "user", content: message },
+      { sender: "user", content: newMessage },
     ]);
 
     setLoading(true);
     setError(null);
 
     try {
-      const res = await chatWithLexi(message);
-      setMessages((prevMessages) => [
+      const res = await chatWithLexi(newMessage);
+      setAllMessages((prevMessages) => [
         ...prevMessages,
         { sender: "lexi", content: res.response },
       ]);
@@ -32,13 +34,13 @@ const LexiChat: React.FC = () => {
       setLoading(false);
     }
 
-    setMessage("");
+    setNewMessage("");
   };
 
   return (
     <div className="flex flex-col h-full max-w-xl mx-auto">
       <div className="flex-grow overflow-y-auto space-y-4 p-4">
-        {messages.map((msg, index) => (
+        {allMessages.map((msg, index) => (
           <div
             key={index}
             className={`flex ${
@@ -61,9 +63,9 @@ const LexiChat: React.FC = () => {
 
       <div className="mt-4 p-4">
         <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Type your message..."
+          value={newMessage}
+          onChange={(e) => setNewMessage(e.target.value)}
+          placeholder={t("analytics_page.lexi_chat.placeholder")}
           className="w-full p-2 border rounded bg-white text-black"
         />
         <button
@@ -71,7 +73,7 @@ const LexiChat: React.FC = () => {
           disabled={loading}
           className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-gray-300 mt-2"
         >
-          Send Message
+          {t("analytics_page.lexi_chat.button")}
         </button>
       </div>
 

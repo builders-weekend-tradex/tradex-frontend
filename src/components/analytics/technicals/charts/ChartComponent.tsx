@@ -11,18 +11,26 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   const [error, setError] = useState<string | null>(null);
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const loadChart = async () => {
-      try {
-        const response = await fetchSingleChart(chartName, ticker);
-        setChartHtml(response);
-      } catch {
-        setError("Failed to load chart.");
-      } finally {
-        setLoading(false);
-      }
-    };
+  const handleError = (message: string) => {
+    setError(message);
+    setLoading(false);
+  };
 
+  const loadChart = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetchSingleChart(chartName, ticker);
+      setChartHtml(response);
+    } catch {
+      handleError("Failed to load chart.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     loadChart();
   }, [ticker, chartName]);
 
@@ -43,12 +51,15 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
     }
   }, [chartHtml]);
 
-  if (loading) return <p>Loading chart...</p>;
-  if (error) return <p>{error}</p>;
-
   return (
     <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow">
-      <div ref={chartContainerRef} />
+      {loading ? (
+        <p>Loading chart...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : (
+        <div ref={chartContainerRef} />
+      )}
     </div>
   );
 };

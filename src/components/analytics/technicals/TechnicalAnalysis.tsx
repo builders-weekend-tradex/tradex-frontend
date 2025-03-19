@@ -8,27 +8,36 @@ const TechnicalAnalysis: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const { ticker } = useTicker();
 
-  useEffect(() => {
-    const loadAnalysis = async () => {
-      try {
-        const response = await fetchTechnicalAnalysis(ticker);
-        setAnalysis(response.analysis);
-      } catch {
-        setError("Failed to load technical analysis.");
-      } finally {
-        setLoading(false);
-      }
-    };
+  const handleError = (message: string) => {
+    setError(message);
+    setLoading(false);
+  };
 
+  const loadAnalysis = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetchTechnicalAnalysis(ticker);
+      setAnalysis(response.analysis);
+    } catch {
+      handleError("Failed to load technical analysis.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     loadAnalysis();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
-
   return (
     <div className="bg-white min-h-full">
-      {analysis ? (
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : analysis ? (
         <>
           <p className="whitespace-pre-line text-gray-700">
             Showing technical analysis for {ticker}
@@ -41,4 +50,5 @@ const TechnicalAnalysis: React.FC = () => {
     </div>
   );
 };
+
 export default TechnicalAnalysis;

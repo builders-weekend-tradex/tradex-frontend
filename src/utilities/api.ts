@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 // Fetch Technical Analysis Summary
 export const fetchTechnicalAnalysis = async (symbol: string) => {
@@ -26,8 +26,8 @@ export const fetchSingleChart = async (chartName: string, symbol: string) => {
   if (!response.ok) throw new Error("Chart not found");
   return await response.text(); // Assuming the response is HTML
 };
-// Fetch Social News
 
+// Fetch Social News
 export const fetchNews = async (symbol: string) => {
   const response = await fetch(
     `${API_BASE_URL}/analysis/social/news/everything/?symbol=${symbol}`
