@@ -1,7 +1,7 @@
 import { useTicker } from "../../hooks/useTicker";
 import { useTranslation } from "react-i18next";
-
 import { ActiveTab } from "../../types/enums";
+import { ArrowRight } from "lucide-react";
 
 interface TickerInputProps {
   setActiveTab: (tab: ActiveTab) => void;
@@ -20,29 +20,48 @@ const TickerInput: React.FC<TickerInputProps> = ({ setActiveTab }) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-full">
-      <div className="p-8 bg-white w-full flex flex-col items-center space-y-6 w-full max-w-md">
-        <label
-          htmlFor="ticker"
-          className="text-2xl text-gray-800 font-semibold"
-        >
-          {t("analytics_page.ticker_input.label")}:
-        </label>
-        <input
-          type="text"
-          placeholder={t("analytics_page.ticker_input.placeholder")}
-          value={ticker}
-          onChange={handleChange}
-          className="w-full p-4 border border-white/40 rounded-lg bg-white text-black placeholder-white/50 focus:border-blue-400 focus:ring focus:ring-blue-500"
-        />
-        <button
-          className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition transform hover:scale-105 shadow-md"
-          type="button"
-          onClick={handleSearch}
-        >
-          {t("analytics_page.ticker_input.button")}
-        </button>
+    <div className="relative overflow-hidden bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
+          <div className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 lg:mt-16 lg:px-8 xl:mt-20">
+            <div className="sm:text-center lg:text-left">
+              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                {t("analytics_page.ticker_input.label")}:
+              </h1>
+
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="sm:flex">
+                  <input
+                    type="email"
+                    required
+                    placeholder={t("analytics_page.ticker_input.placeholder")}
+                    className="w-full bg-gray-100 px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md text-black"
+                    value={ticker}
+                    onChange={handleChange}
+                  />
+                  <div className="mt-3 sm:mt-0 sm:ml-3">
+                    <button
+                      type="button"
+                      onClick={handleSearch}
+                      className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-lg md:px-6"
+                    >
+                      {t("analytics_page.ticker_input.button")}
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      {/* <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <img
+        className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+        src=""
+        alt="Trading dashboard"
+      />
+    </div> */}
     </div>
   );
 };

@@ -28,7 +28,7 @@ const TechnicalsTab: React.FC = () => {
   }, []); // Only runs once on mount
 
   return (
-    <div className="min-h-full h-full w-full mt-2">
+    <div className="min-h-full h-full w-full">
       {isLoading ? (
         <div className="flex justify-center items-center min-h-full h-full">
           <img
@@ -39,71 +39,85 @@ const TechnicalsTab: React.FC = () => {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 gap-6">
-            <h2 className="text-2xl text-gray-800 font-semibold shadow-md p-4 bg-white mt-4">
-              Technical Analysis
-            </h2>
-            <div className="bg-white p-4 shadow-md space-y-4 gap-6 w-full">
-              <div className="bg-white p-4 space-y-4 mt-4 mb-4">
-                <TechnicalAnalysis />
-              </div>
+          <div className="grid grid-cols-1 ">
+            <div className="bg-white p-4 shadow-sm space-y-4 col-span-2">
+              <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
+                Technical Analysis
+              </h2>
             </div>
+            {/* <div className="bg-white p-4 shadow-sm space-y-4 gap-6 w-full"> */}
+            <div className="bg-white p-4 space-y-4 mt-4 w-full">
+              <TechnicalAnalysis />
+            </div>
+            {/* </div> */}
           </div>
 
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-white p-4 shadow-md space-y-4 col-span-2  mt-4 mb-4">
-              <h2 className="text-2xl text-gray-800 font-semibold">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="bg-white p-4 shadow-sm space-y-4 col-span-2 mt-4">
+              <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
                 Technical Indicators
               </h2>
             </div>
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Price Trend
               </h2>
               <PriceTrendChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">Volume</h2>
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+                Volume
+              </h2>
               <VolumeChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">MACD</h2>
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+                MACD
+              </h2>
               <MACDChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">RSI</h2>
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+                RSI
+              </h2>
               <RSIChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Bollinger Bands
               </h2>
               <BollingerBandsChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Stochastic Oscillator
               </h2>
               <StochasticOscillatorChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">Williams</h2>
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+                Williams
+              </h2>
               <WilliamsChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
-              <h2 className="text-xl text-gray-800 font-semibold">ADX</h2>
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+                ADX
+              </h2>
               <ADXChart shouldFetch={shouldFetch} />
             </div>
 
-            <div className="bg-white p-6 shadow-md space-y-4 col-span-2 place-items-center mb-4">
-              <h2 className="text-xl text-gray-800 font-semibold">CMF</h2>
+            <div className="bg-white p-6 shadow-sm space-y-4 col-span-2 place-items-center mb-4">
+              <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+                CMF
+              </h2>
               <CMFChart shouldFetch={shouldFetch} />
             </div>
           </div>

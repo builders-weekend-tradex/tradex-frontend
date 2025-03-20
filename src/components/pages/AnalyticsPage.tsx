@@ -22,8 +22,8 @@ const AnalyticsPage: React.FC = () => {
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-900 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.TickerInput
-              ? "bg-gray-900 text-white"
-              : "bg-gray-800 text-white"
+              ? "bg-gray-900 text-white text-base font-semibold tracking-wide uppercase"
+              : "bg-gray-800 text-white text-base font-semibold tracking-wide uppercase"
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.TickerInput)}
         >
@@ -32,8 +32,8 @@ const AnalyticsPage: React.FC = () => {
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.Technicals
-              ? "bg-white text-gray-700"
-              : "bg-gray-200 text-gray-700"
+              ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
+              : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.Technicals)}
         >
@@ -42,8 +42,8 @@ const AnalyticsPage: React.FC = () => {
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.Social
-              ? "bg-white text-gray-700"
-              : "bg-gray-200 text-gray-700"
+              ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
+              : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.Social)}
         >
@@ -52,8 +52,8 @@ const AnalyticsPage: React.FC = () => {
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.Fundamentals
-              ? "bg-white text-gray-700"
-              : "bg-gray-200 text-gray-700"
+              ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
+              : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
         >
@@ -62,8 +62,8 @@ const AnalyticsPage: React.FC = () => {
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.LexiChat
-              ? "bg-white text-gray-700"
-              : "bg-gray-200 text-gray-700"
+              ? "bg-white text-base font-semibold tracking-wide uppercase text-gray-700"
+              : "bg-gray-200 text-base font-semibold tracking-wide uppercase text-gray-700"
           }`}
           onClick={() => handleSetActiveTab(ActiveTab.LexiChat)}
         >
