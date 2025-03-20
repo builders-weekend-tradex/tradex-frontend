@@ -2,7 +2,7 @@ import { useState } from "react";
 import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import TradexLogo from "../../assets/tradex-logo.svg";
+import TradexLogo from "../../assets/tradex-logo-header.svg";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                 {/* <span className="ml-2 text-2xl font-bold text-blue-800">
                   TradEx
                 </span> */}
-                <img className="h-20 w-20" src={TradexLogo} alt="Tradex Logo" />
+                <img className="h-24 w-24" src={TradexLogo} alt="Tradex Logo" />
               </Link>
             </div>
             <div className="hidden sm:flex sm:flex-grow sm:ml-6 sm:space-x-8">

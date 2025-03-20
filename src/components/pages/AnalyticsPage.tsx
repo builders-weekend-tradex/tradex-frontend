@@ -20,7 +20,7 @@ const AnalyticsPage: React.FC = () => {
       {/* Set flex and h-screen */}
       <div className="flex space-x-1 w-full">
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-900 rounded-t-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-900 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.TickerInput
               ? "bg-gray-900 text-white"
               : "bg-gray-800 text-white"
@@ -30,27 +30,7 @@ const AnalyticsPage: React.FC = () => {
           {t("analytics_page.tabs.ticker_input")}
         </button>
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-t-lg font-bold focus:outline-none ${
-            activeTab === ActiveTab.Social
-              ? "bg-white text-gray-700"
-              : "bg-gray-200 text-gray-700"
-          }`}
-          onClick={() => handleSetActiveTab(ActiveTab.Social)}
-        >
-          {t("analytics_page.tabs.social")}
-        </button>
-        <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-t-lg font-bold focus:outline-none ${
-            activeTab === ActiveTab.Fundamentals
-              ? "bg-white text-gray-700"
-              : "bg-gray-200 text-gray-700"
-          }`}
-          onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
-        >
-          {t("analytics_page.tabs.fundamentals")}
-        </button>
-        <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-t-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.Technicals
               ? "bg-white text-gray-700"
               : "bg-gray-200 text-gray-700"
@@ -60,7 +40,27 @@ const AnalyticsPage: React.FC = () => {
           {t("analytics_page.tabs.technicals")}
         </button>
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-t-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
+            activeTab === ActiveTab.Social
+              ? "bg-white text-gray-700"
+              : "bg-gray-200 text-gray-700"
+          }`}
+          onClick={() => handleSetActiveTab(ActiveTab.Social)}
+        >
+          {t("analytics_page.tabs.social")}
+        </button>
+        <button
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
+            activeTab === ActiveTab.Fundamentals
+              ? "bg-white text-gray-700"
+              : "bg-gray-200 text-gray-700"
+          }`}
+          onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
+        >
+          {t("analytics_page.tabs.fundamentals")}
+        </button>
+        <button
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
             activeTab === ActiveTab.LexiChat
               ? "bg-white text-gray-700"
               : "bg-gray-200 text-gray-700"
@@ -71,13 +71,15 @@ const AnalyticsPage: React.FC = () => {
         </button>
       </div>
       {/* Ensure that the content area grows but the input remains at the bottom */}
-      <div className="flex-grow bg-white overflow-auto">
+      <div className="flex-grow bg-gradient-to-b from-gray-50 to-gray-100 overflow-auto mt-2">
         {" "}
         {/* Add flex-grow here */}
-        {activeTab === ActiveTab.TickerInput && <TickerInput />}
+        {activeTab === ActiveTab.TickerInput && (
+          <TickerInput setActiveTab={setActiveTab} />
+        )}
+        {activeTab === ActiveTab.Technicals && <TechnicalsTab />}
         {activeTab === ActiveTab.Social && <SocialTab />}
         {activeTab === ActiveTab.Fundamentals && <FundamentalsTab />}
-        {activeTab === ActiveTab.Technicals && <TechnicalsTab />}
         {activeTab === ActiveTab.LexiChat && <LexiChat />}
       </div>
     </div>

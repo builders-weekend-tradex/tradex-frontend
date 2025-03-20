@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { fetchSingleChart } from "../../../../utilities/api";
 import { ChartComponentProps } from "../../../../types/interfaces";
 
 const ChartComponent: React.FC<ChartComponentProps> = ({
   ticker,
   chartName,
+  shouldFetch,
 }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
     setLoading(false);
   };
 
-  const loadChart = async () => {
+  const loadChart = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -28,11 +29,23 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
     } finally {
       setLoading(false);
     }
-  };
+  }, [chartName, ticker]);
 
   useEffect(() => {
-    loadChart();
-  }, [ticker, chartName]);
+    if (shouldFetch) {
+      loadChart();
+    }
+  }, [shouldFetch, loadChart]); // Added loadChart as dependency
+
+  //   useEffect(() => {
+  //     loadChart();
+  //   }, [ticker, chartName]);
+
+  //   useEffect(() => {
+  //     if (shouldFetch) {
+  //       loadChart();
+  //     }
+  //   }, [loadChart, shouldFetch]); // Trigger chart load whenever shouldFetch changes
 
   useEffect(() => {
     if (chartHtml && chartContainerRef.current) {
