@@ -39,9 +39,6 @@ const TechnicalAnalysis: React.FC = () => {
         <p>{error}</p>
       ) : analysis ? (
         <>
-          <p className="whitespace-pre-line text-gray-700">
-            Showing technical analysis for {ticker}
-          </p>
           <pre className="whitespace-pre-line text-gray-700">{analysis}</pre>
         </>
       ) : (

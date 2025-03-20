@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import MACDChart from "./charts/MACDChart";
 import PriceTrendChart from "./charts/PriceTrendChart";
 import VolumeChart from "./charts/VolumeChart";
@@ -8,61 +9,106 @@ import WilliamsChart from "./charts/WilliamsChart";
 import ADXChart from "./charts/ADXChart";
 import CMFChart from "./charts/CMFChart";
 import TechnicalAnalysis from "./TechnicalAnalysis";
+import TradexLogo from "../../../assets/tradex-logo.svg";
 
 const TechnicalsTab: React.FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [shouldFetch, setShouldFetch] = useState(false);
+
+  const triggerFetch = () => {
+    setShouldFetch(true); // Immediately trigger fetching
+  };
+
+  useEffect(() => {
+    triggerFetch(); // Start fetching the data immediately when the component mounts
+
+    setTimeout(() => {
+      setIsLoading(false); // Stop loading animation after 10 seconds
+    }, 10);
+  }, []); // Only runs once on mount
+
   return (
-    <div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Price Trend</h2>
-        <PriceTrendChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Volume</h2>
-        <VolumeChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">MACD</h2>
+    <div className="min-h-full h-full w-full mt-2">
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-full h-full">
+          <img
+            src={TradexLogo}
+            alt="Tradex Logo"
+            className="w-32 h-32 animate-fadeInScale"
+          />
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 gap-6">
+            <h2 className="text-2xl text-gray-800 font-semibold shadow-md p-4 bg-white mt-4">
+              Technical Analysis
+            </h2>
+            <div className="bg-white p-4 shadow-md space-y-4 gap-6 w-full">
+              <div className="bg-white p-4 space-y-4 mt-4 mb-4">
+                <TechnicalAnalysis />
+              </div>
+            </div>
+          </div>
 
-        <MACDChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">RSI</h2>
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-white p-4 shadow-md space-y-4 col-span-2  mt-4 mb-4">
+              <h2 className="text-2xl text-gray-800 font-semibold">
+                Technical Indicators
+              </h2>
+            </div>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">
+                Price Trend
+              </h2>
+              <PriceTrendChart shouldFetch={shouldFetch} />
+            </div>
 
-        <RSIChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Bollinger Bands</h2>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">Volume</h2>
+              <VolumeChart shouldFetch={shouldFetch} />
+            </div>
 
-        <BollingerBandsChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">
-          Stochastic Oscillator
-        </h2>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">MACD</h2>
+              <MACDChart shouldFetch={shouldFetch} />
+            </div>
 
-        <StochasticOscillatorChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Williams</h2>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">RSI</h2>
+              <RSIChart shouldFetch={shouldFetch} />
+            </div>
 
-        <WilliamsChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">ADX</h2>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">
+                Bollinger Bands
+              </h2>
+              <BollingerBandsChart shouldFetch={shouldFetch} />
+            </div>
 
-        <ADXChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">CMF</h2>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">
+                Stochastic Oscillator
+              </h2>
+              <StochasticOscillatorChart shouldFetch={shouldFetch} />
+            </div>
 
-        <CMFChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">
-          Technical Analysis
-        </h2>
-        <TechnicalAnalysis />
-      </div>
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">Williams</h2>
+              <WilliamsChart shouldFetch={shouldFetch} />
+            </div>
+
+            <div className="bg-white p-6 shadow-md space-y-4 place-items-center">
+              <h2 className="text-xl text-gray-800 font-semibold">ADX</h2>
+              <ADXChart shouldFetch={shouldFetch} />
+            </div>
+
+            <div className="bg-white p-6 shadow-md space-y-4 col-span-2 place-items-center mb-4">
+              <h2 className="text-xl text-gray-800 font-semibold">CMF</h2>
+              <CMFChart shouldFetch={shouldFetch} />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
