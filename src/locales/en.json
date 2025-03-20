@@ -95,10 +95,16 @@
     }
   },
   "analytics_page": {
+    "ticker_input": {
+      "label": "Enter a Ticker Symbol",
+      "placeholder": "Example: AAPL",
+      "button": "Search"
+    },
     "tabs": {
       "social": "Social",
       "fundamentals": "Fundamentals",
-      "technicals": "Technicals"
+      "technicals": "Technicals",
+      "lexi_chat": "Lexi Chat"
     },
     "socials": {
       "news": "News",
@@ -112,7 +118,12 @@
     "technicals": {
       "averages_chart": "Averages Chart",
       "buy_sell_chart": "Buy Sell Chart",
-      "price_table": "Price Table"
+      "price_table": "Price Table",
+      "technical_analysis": "Technical Analysis"
+    },
+    "lexi_chat": {
+      "placeholder": "Ask Lexi a question...",
+      "button": "Send"
     }
   },
   "footer": {
