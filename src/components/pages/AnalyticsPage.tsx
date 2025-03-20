@@ -20,7 +20,7 @@ const AnalyticsPage: React.FC = () => {
       {/* Set flex and h-screen */}
       <div className="flex space-x-1 w-full">
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-900 rounded-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-900 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.TickerInput
               ? "bg-gray-900 text-white text-base font-semibold tracking-wide uppercase"
               : "bg-gray-800 text-white text-base font-semibold tracking-wide uppercase"
@@ -30,7 +30,7 @@ const AnalyticsPage: React.FC = () => {
           {t("analytics_page.tabs.ticker_input")}
         </button>
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.Technicals
               ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
               : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
@@ -40,7 +40,7 @@ const AnalyticsPage: React.FC = () => {
           {t("analytics_page.tabs.technicals")}
         </button>
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.Social
               ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
               : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
@@ -50,7 +50,7 @@ const AnalyticsPage: React.FC = () => {
           {t("analytics_page.tabs.social")}
         </button>
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.Fundamentals
               ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
               : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
@@ -60,7 +60,7 @@ const AnalyticsPage: React.FC = () => {
           {t("analytics_page.tabs.fundamentals")}
         </button>
         <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg font-bold focus:outline-none ${
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.LexiChat
               ? "bg-white text-base font-semibold tracking-wide uppercase text-gray-700"
               : "bg-gray-200 text-base font-semibold tracking-wide uppercase text-gray-700"
