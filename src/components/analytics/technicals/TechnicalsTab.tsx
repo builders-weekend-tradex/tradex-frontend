@@ -18,7 +18,7 @@ const TechnicalsTab: React.FC = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 10000);
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -58,56 +58,56 @@ const TechnicalsTab: React.FC = () => {
                 Technical Indicators
               </h2>
             </div>
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Price Trend
               </h2>
               <PriceTrendChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Volume
               </h2>
               <VolumeChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 MACD
               </h2>
               <MACDChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 RSI
               </h2>
               <RSIChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Bollinger Bands
               </h2>
               <BollingerBandsChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Stochastic Oscillator
               </h2>
               <StochasticOscillatorChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Williams
               </h2>
               <WilliamsChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 ADX
               </h2>
