@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { fetchSingleChart } from "../../../../utilities/api";
+// import { fetchSingleChart } from "../../../../utilities/api";
 import { ChartComponentProps } from "../../../../types/interfaces";
 
 const ChartComponent: React.FC<ChartComponentProps> = ({
@@ -11,28 +11,29 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   const [error, setError] = useState<string | null>(null);
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleError = (message: string) => {
-    setError(message);
-    setLoading(false);
-  };
+  //   const handleError = (message: string) => {
+  //     setError(message);
+  //     setLoading(false);
+  //   };
 
-  const loadChart = async () => {
-    setLoading(true);
-    setError(null);
+  //   const loadChart = async () => {
+  //     setLoading(true);
+  //     setError(null);
 
-    try {
-      const response = await fetchSingleChart(chartName, ticker);
-      setChartHtml(response);
-    } catch {
-      handleError("Failed to load chart.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     try {
+  //       const response = await fetchSingleChart(chartName, ticker);
+  //       setChartHtml(response);
+  //       console.log("API Response:", response);
+  //     } catch {
+  //       handleError("Failed to load chart.");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-  useEffect(() => {
-    loadChart();
-  }, [ticker, chartName]);
+  //   useEffect(() => {
+  //     loadChart();
+  //   }, [ticker, chartName]);
 
   useEffect(() => {
     if (chartHtml && chartContainerRef.current) {
@@ -52,7 +53,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   }, [chartHtml]);
 
   return (
-    <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow">
+    <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow min-h-[600px] min-w-[600px]">
       {loading ? (
         <p>Loading chart...</p>
       ) : error ? (
