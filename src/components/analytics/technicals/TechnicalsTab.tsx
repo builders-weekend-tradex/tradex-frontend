@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import MACDChart from "./charts/MACDChart";
 import PriceTrendChart from "./charts/PriceTrendChart";
 import VolumeChart from "./charts/VolumeChart";
@@ -16,10 +16,10 @@ const TechnicalsTab: React.FC = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setIsLoading(false); // Hide loading animation after 10 seconds
+      setIsLoading(false);
     }, 10000);
 
-    return () => clearTimeout(timeout); // Cleanup timeout on component unmount
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
