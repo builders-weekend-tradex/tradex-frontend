@@ -28,7 +28,7 @@ const TickerInput: React.FC<TickerInputProps> = ({ setActiveTab }) => {
           src={image1}
           alt="Trading dashboard"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
+        <div className="absolute inset-0 bg-black opacity-50 "></div>
       </div>
 
       {/* Content */}

@@ -58,9 +58,9 @@ const Header: React.FC = () => {
               </Link>
             </div>
             <div className="hidden sm:flex sm:items-center sm:justify-end sm:gap-2">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+              {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
                 {t("header.sign-in")}
-              </button>
+              </button> */}
               <LanguageSelector />
             </div>
           </div>

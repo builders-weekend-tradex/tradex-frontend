@@ -27,7 +27,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900">
+    <div className="min-h-screen text-gray-900">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -36,7 +36,7 @@ const LandingPage: React.FC = () => {
             alt="Trading dashboard"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 "></div>
+          <div className="absolute inset-0 bg-black opacity-50 "></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto flex items-center justify-start min-h-screen">
           <main className="px-4 sm:px-6 lg:px-8">
