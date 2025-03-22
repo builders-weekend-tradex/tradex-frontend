@@ -10,6 +10,7 @@ import ADXChart from "./charts/ADXChart";
 import CMFChart from "./charts/CMFChart";
 import TechnicalAnalysis from "./TechnicalAnalysis";
 import TradexLogo from "../../../assets/tradex-logo.svg";
+// import AllCharts from "./charts/AllCharts";
 
 const TechnicalsTab: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -47,6 +48,9 @@ const TechnicalsTab: React.FC = () => {
               <TechnicalAnalysis />
             </div>
           </div>
+          {/* <div>
+            <AllCharts />
+          </div> */}
 
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="bg-white p-4 shadow-sm space-y-4 col-span-2 mt-4">
@@ -54,57 +58,56 @@ const TechnicalsTab: React.FC = () => {
                 Technical Indicators
               </h2>
             </div>
-
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Price Trend
               </h2>
               <PriceTrendChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Volume
               </h2>
               <VolumeChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 MACD
               </h2>
               <MACDChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 RSI
               </h2>
               <RSIChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Bollinger Bands
               </h2>
               <BollingerBandsChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Stochastic Oscillator
               </h2>
               <StochasticOscillatorChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 Williams
               </h2>
               <WilliamsChart />
             </div>
 
-            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center">
+            <div className="bg-white p-6 shadow-sm space-y-4 place-items-center min-h-[500px] min-w-[500px]">
               <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
                 ADX
               </h2>
