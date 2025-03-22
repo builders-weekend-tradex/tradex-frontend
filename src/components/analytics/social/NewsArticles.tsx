@@ -7,7 +7,7 @@ const daysAgo = (publishedAt: string | number | Date): string => {
   const today = new Date();
   const publishedDate = new Date(publishedAt);
   const timeDiff = today.getTime() - publishedDate.getTime();
-  const daysDifference = Math.floor(timeDiff / (1000 * 3600 * 24)); // Convert milliseconds to days
+  const daysDifference = Math.floor(timeDiff / (1000 * 3600 * 24));
 
   if (daysDifference === 0) {
     return "Today";
@@ -44,7 +44,6 @@ const NewsArticles: React.FC = () => {
         const result = await fetchNews(ticker);
         setNews(result);
 
-        // Cache the result
         localStorage.setItem(`news_${ticker}`, JSON.stringify(result));
       } catch {
         setError("Failed to fetch news.");
