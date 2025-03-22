@@ -3,6 +3,7 @@
     "features": "Features",
     "pricing": "Pricing",
     "testimonials": "Testimonials",
+    "analytics": "Analytics",
     "sign-in": "Sign In"
   },
   "landing_page": {
@@ -93,6 +94,38 @@
       "cta": "Get Started"
     }
   },
+  "analytics_page": {
+    "ticker_input": {
+      "label": "Enter a Ticker Symbol",
+      "placeholder": "Example: AAPL",
+      "button": "Search"
+    },
+    "tabs": {
+      "social": "Social",
+      "fundamentals": "Fundamentals",
+      "technicals": "Technicals",
+      "lexi_chat": "Lexi Chat"
+    },
+    "socials": {
+      "news": "News",
+      "sentiment_score": "Sentiment Score"
+    },
+    "fundamentals": {
+      "about_company": "About Company",
+      "financial_sheet": "Financial Sheet",
+      "management_info": "Management Info"
+    },
+    "technicals": {
+      "averages_chart": "Averages Chart",
+      "buy_sell_chart": "Buy Sell Chart",
+      "price_table": "Price Table",
+      "technical_analysis": "Technical Analysis"
+    },
+    "lexi_chat": {
+      "placeholder": "Ask Lexi a question...",
+      "button": "Send"
+    }
+  },
   "footer": {
     "sections": {
       "product": "Product",
@@ -118,6 +151,6 @@
       "cookie_policy": "Cookie Policy",
       "licenses": "Licenses"
     },
-    "copyright": "© 2025 TradEx. All rights reserved."
+    "copyright": "2025 TradEx."
   }
 }

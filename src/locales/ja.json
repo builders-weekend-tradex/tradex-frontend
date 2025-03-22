@@ -3,6 +3,7 @@
     "features": "特徴",
     "pricing": "価格",
     "testimonials": "お客様の声",
+    "analytics": "分析",
     "sign-in": "サインイン"
   },
   "landing_page": {
@@ -93,6 +94,38 @@
       "cta": "Get Started"
     }
   },
+  "analytics_page": {
+    "ticker_input": {
+      "label": "Enter a Ticker Symbol!",
+      "placeholder": "Example: AAPL!",
+      "button": "Search!"
+    },
+    "tabs": {
+      "social": "Social!",
+      "fundamentals": "Fundamentals!",
+      "technicals": "Technicals!",
+      "lexi_chat": "Lexi Chat!"
+    },
+    "socials": {
+      "news": "News!",
+      "sentiment_score": "Sentiment Score!"
+    },
+    "fundamentals": {
+      "about_company": "About Company!",
+      "financial_sheet": "Financial Sheet!",
+      "management_info": "Management Info!"
+    },
+    "technicals": {
+      "averages_chart": "Averages Chart!",
+      "buy_sell_chart": "Buy Sell Chart!",
+      "price_table": "Price Table!",
+      "technical_analysis": "Technical Analysis!"
+    },
+    "lexi_chat": {
+      "placeholder": "Ask Lexi a question...!",
+      "button": "Send!"
+    }
+  },
   "footer": {
     "sections": {
       "product": "製品",
@@ -118,6 +151,6 @@
       "cookie_policy": "クッキーポリシー",
       "licenses": "ライセンス"
     },
-    "copyright": "© 2025 TradEx. 無断転載を禁じます。"
+    "copyright": "2025 TradEx."
   }
 }

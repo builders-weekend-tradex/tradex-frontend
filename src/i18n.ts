@@ -5,7 +5,7 @@ import ja from "./locales/ja.json";
 
 i18next.use(initReactI18next).init({
   debug: true,
-  fallbackLng: "ja",
+  fallbackLng: "en",
   resources: {
     en: {
       translation: en,
