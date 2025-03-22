@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTechnicalAnalysis } from "../../../utilities/api";
 import { useTicker } from "../../../hooks/useTicker";
+import Typewriter from "./Typewriter";
 
 const TechnicalAnalysis: React.FC = () => {
   const [analysis, setAnalysis] = useState<string | null>(null);
@@ -39,7 +40,8 @@ const TechnicalAnalysis: React.FC = () => {
         <p>{error}</p>
       ) : analysis ? (
         <>
-          <pre className="whitespace-pre-line text-gray-700">{analysis}</pre>
+          {/* <pre className="whitespace-pre-line text-gray-700">{analysis}</pre> */}
+          <Typewriter message={analysis} speed={30} />
         </>
       ) : (
         <p>No analysis available</p>
