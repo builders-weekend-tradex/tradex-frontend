@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTicker } from "../../../../hooks/useTicker";
 
 const AllCharts: React.FC = () => {
-  //   const [chartHtml, setChartHtml] = useState<string>("");
+  const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
@@ -20,8 +20,8 @@ const AllCharts: React.FC = () => {
       if (!response.ok) throw new Error("Failed to fetch all technical charts");
 
       console.log("API Response:", response);
-      //   const data = await response.text();
-      //   setChartHtml(data);
+      const data = await response.text();
+      setChartHtml(data);
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -33,22 +33,22 @@ const AllCharts: React.FC = () => {
     loadCharts();
   }, [ticker]);
 
-  //   useEffect(() => {
-  //     if (chartHtml && chartContainerRef.current) {
-  //       chartContainerRef.current.innerHTML = chartHtml;
+  useEffect(() => {
+    if (chartHtml && chartContainerRef.current) {
+      chartContainerRef.current.innerHTML = chartHtml;
 
-  //       const scriptTags = chartContainerRef.current.querySelectorAll("script");
-  //       scriptTags.forEach((script) => {
-  //         const newScript = document.createElement("script");
-  //         if (script.src) {
-  //           newScript.src = script.src;
-  //         } else {
-  //           newScript.innerHTML = script.innerHTML;
-  //         }
-  //         document.body.appendChild(newScript);
-  //       });
-  //     }
-  //   }, [chartHtml]);
+      const scriptTags = chartContainerRef.current.querySelectorAll("script");
+      scriptTags.forEach((script) => {
+        const newScript = document.createElement("script");
+        if (script.src) {
+          newScript.src = script.src;
+        } else {
+          newScript.innerHTML = script.innerHTML;
+        }
+        document.body.appendChild(newScript);
+      });
+    }
+  }, [chartHtml]);
 
   return (
     <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow">

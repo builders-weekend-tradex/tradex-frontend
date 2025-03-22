@@ -19,9 +19,17 @@ const TechnicalAnalysis: React.FC = () => {
     setError(null);
 
     try {
-      const response = await fetchTechnicalAnalysis(ticker);
-      setAnalysis(response.analysis);
-      console.log("API Response:", response);
+      const cachedAnalysis = localStorage.getItem(ticker); // Check for cached analysis using ticker as key
+      if (cachedAnalysis) {
+        console.log("Using cached analysis data.");
+        setAnalysis(cachedAnalysis); // Use cached data
+        setLoading(false); // Stop loading since data is available
+      } else {
+        console.log("Fetching new analysis data.");
+        const response = await fetchTechnicalAnalysis(ticker);
+        setAnalysis(response.analysis);
+        localStorage.setItem(ticker, response.analysis); // Cache the data using ticker as the key
+      }
     } catch {
       handleError("Failed to load technical analysis.");
     } finally {
@@ -31,7 +39,7 @@ const TechnicalAnalysis: React.FC = () => {
 
   useEffect(() => {
     loadAnalysis();
-  }, []);
+  }, [ticker]); // Re-fetch the analysis if the ticker changes
 
   // Helper component to format and display analysis sections
   const AnalysisReport = ({ data }: { data: string }) => {
