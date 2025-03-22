@@ -68,7 +68,7 @@ const NewsArticles: React.FC = () => {
         {news?.articles?.map((article) => (
           <div
             key={article.url}
-            className="shadow-sm p-4 border hover:shadow-xl transition space-y-4 text-left"
+            className="bg-white shadow-sm p-4 mb-2 border hover:shadow-xl transition text-left"
           >
             <li>
               <a
