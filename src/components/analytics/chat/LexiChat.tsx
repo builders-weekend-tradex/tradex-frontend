@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { chatWithLexi } from "../../../utilities/api";
 import { useTranslation } from "react-i18next";
 
@@ -12,6 +12,19 @@ const LexiChat: React.FC = () => {
   const { t } = useTranslation();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  useEffect(() => {
+    const cachedMessages = localStorage.getItem("lexiChatMessages");
+    if (cachedMessages) {
+      setAllMessages(JSON.parse(cachedMessages));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (allMessages.length > 0) {
+      localStorage.setItem("lexiChatMessages", JSON.stringify(allMessages));
+    }
+  }, [allMessages]);
+
   const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewMessage(event.target.value);
 
@@ -19,7 +32,6 @@ const LexiChat: React.FC = () => {
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
 
-      // Apply max height with scrollable overflow
       if (textareaRef.current.scrollHeight > 500) {
         textareaRef.current.style.height = "500px";
         textareaRef.current.style.overflowY = "scroll";
@@ -61,8 +73,9 @@ const LexiChat: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-full max-w-xl mx-auto bg-white rounded-lg mb-2">
-      <div className="flex-grow overflow-y-auto space-y-4 p-4">
+    <div className="flex flex-col max-w-xl h-full mx-auto bg-white rounded-lg mb-2">
+      <div className="flex-grow overflow-y-auto space-y-4 p-4 pb-12">
+        {" "}
         {allMessages.map((msg, index) => (
           <div
             key={index}
