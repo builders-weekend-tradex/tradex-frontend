@@ -18,6 +18,7 @@ const NewsArticles: React.FC = () => {
       try {
         const result = await fetchNews("Google"); // Replace with dynamic company name
         setNews(result);
+        console.log("API Response:", result);
       } catch {
         setError("Failed to fetch news.");
       } finally {

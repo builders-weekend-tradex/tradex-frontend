@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { fetchSingleChart } from "../../../../utilities/api";
+import { fetchSingleChart } from "../../../../utilities/api";
 import { ChartComponentProps } from "../../../../types/interfaces";
+import TradexLogo from "../../../../assets/tradex-logo.svg";
 
 const ChartComponent: React.FC<ChartComponentProps> = ({
   ticker,
@@ -11,29 +12,28 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   const [error, setError] = useState<string | null>(null);
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
 
-  //   const handleError = (message: string) => {
-  //     setError(message);
-  //     setLoading(false);
-  //   };
+  const handleError = (message: string) => {
+    setError(message);
+    setLoading(false);
+  };
 
-  //   const loadChart = async () => {
-  //     setLoading(true);
-  //     setError(null);
+  const loadChart = async () => {
+    setLoading(true);
+    setError(null);
 
-  //     try {
-  //       const response = await fetchSingleChart(chartName, ticker);
-  //       setChartHtml(response);
-  //       console.log("API Response:", response);
-  //     } catch {
-  //       handleError("Failed to load chart.");
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+    try {
+      const response = await fetchSingleChart(chartName, ticker);
+      setChartHtml(response);
+    } catch {
+      handleError("Failed to load chart.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  //   useEffect(() => {
-  //     loadChart();
-  //   }, [ticker, chartName]);
+  useEffect(() => {
+    loadChart();
+  }, [ticker, chartName]);
 
   useEffect(() => {
     if (chartHtml && chartContainerRef.current) {
@@ -53,11 +53,24 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   }, [chartHtml]);
 
   return (
-    <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow min-h-[600px] min-w-[600px]">
+    <div className="mt-6 p-4 min-h-130 min-w-60 flex justify-center items-center">
       {loading ? (
-        <p>Loading chart...</p>
+        <div>
+          <img
+            src={TradexLogo}
+            alt="Loading"
+            className="w-40 h-40 animate-pulse "
+          />
+        </div>
       ) : error ? (
-        <p>{error}</p>
+        <div>
+          <img
+            src={TradexLogo}
+            alt="Loading"
+            className="w-40 h-40 animate-pulse "
+          />
+          <p className="text-gray-900 bg-black">{error}</p>
+        </div>
       ) : (
         <div ref={chartContainerRef} />
       )}

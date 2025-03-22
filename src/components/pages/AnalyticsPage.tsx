@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SocialTab from "../analytics/social/SocialTab";
-import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
+// import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
 import TechnicalsTab from "../analytics/technicals/TechnicalsTab";
 import LexiChat from "../analytics/chat/LexiChat";
 import { ActiveTab } from "../../types/enums";
@@ -49,7 +49,7 @@ const AnalyticsPage: React.FC = () => {
         >
           {t("analytics_page.tabs.social")}
         </button>
-        <button
+        {/* <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.Fundamentals
               ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
@@ -58,7 +58,7 @@ const AnalyticsPage: React.FC = () => {
           onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
         >
           {t("analytics_page.tabs.fundamentals")}
-        </button>
+        </button> */}
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.LexiChat
@@ -71,7 +71,7 @@ const AnalyticsPage: React.FC = () => {
         </button>
       </div>
       {/* Ensure that the content area grows but the input remains at the bottom */}
-      <div className="flex-grow bg-gradient-to-b from-gray-50 to-gray-100 overflow-auto mt-2">
+      <div className="flex-grow overflow-auto mt-2">
         {" "}
         {/* Add flex-grow here */}
         {activeTab === ActiveTab.TickerInput && (
@@ -79,7 +79,7 @@ const AnalyticsPage: React.FC = () => {
         )}
         {activeTab === ActiveTab.Technicals && <TechnicalsTab />}
         {activeTab === ActiveTab.Social && <SocialTab />}
-        {activeTab === ActiveTab.Fundamentals && <FundamentalsTab />}
+        {/* {activeTab === ActiveTab.Fundamentals && <FundamentalsTab />} */}
         {activeTab === ActiveTab.LexiChat && <LexiChat />}
       </div>
     </div>

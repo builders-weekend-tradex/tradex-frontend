@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTechnicalAnalysis } from "../../../utilities/api";
 import { useTicker } from "../../../hooks/useTicker";
-// import Typewriter from "./Typewriter";
+import TradexLogo from "../../../assets/tradex-logo.svg";
 
 const TechnicalAnalysis: React.FC = () => {
   const [analysis, setAnalysis] = useState<string | null>(null);
@@ -21,6 +21,7 @@ const TechnicalAnalysis: React.FC = () => {
     try {
       const response = await fetchTechnicalAnalysis(ticker);
       setAnalysis(response.analysis);
+      console.log("API Response:", response);
     } catch {
       handleError("Failed to load technical analysis.");
     } finally {
@@ -32,19 +33,69 @@ const TechnicalAnalysis: React.FC = () => {
     loadAnalysis();
   }, []);
 
+  // Helper component to format and display analysis sections
+  const AnalysisReport = ({ data }: { data: string }) => {
+    const sections = data.split("\n\n");
+
+    return (
+      <div className="p-4 max-w-4xl mx-auto my-6 p-8">
+        {sections.map((section, index) => {
+          const lines = section.split("\n");
+          const firstLine = lines[0].trim();
+
+          // Determine if it's a main heading or subheading
+          const isMainHeading = index === 0; // The very first heading
+          const isSubheading =
+            firstLine.endsWith(":") || /^[A-Za-z\s\d-]+$/.test(firstLine);
+
+          return (
+            <div key={index} className="mb-6">
+              {/* Main Heading */}
+              {isMainHeading && (
+                <h1 className="text-2xl font-bold text-gray-800 mb-4">
+                  {firstLine}
+                </h1>
+              )}
+
+              {/* Subheading */}
+              {!isMainHeading && isSubheading && (
+                <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase mb-2">
+                  {firstLine}
+                </h2>
+              )}
+
+              {/* Content */}
+              <p className="text-gray-700 leading-relaxed">
+                {isMainHeading || isSubheading
+                  ? lines.slice(1).join(" ").trim()
+                  : lines.join(" ").trim()}
+              </p>
+            </div>
+          );
+        })}
+        <p className="mt-4 text-gray-500 italic">
+          Head over to Lexi Chat to gather more insights.
+        </p>
+      </div>
+    );
+  };
+
   return (
-    <div className="bg-white min-h-full">
+    <div className="bg-white h-screen w-full overflow-y-auto p-4">
       {loading ? (
-        <p>Loading...</p>
+        <div className="h-full w-full flex justify-center items-center bg-white">
+          <img
+            src={TradexLogo}
+            alt="Tradex Logo"
+            className="w-64 h-64 animate-pulse"
+          />
+        </div>
       ) : error ? (
-        <p>{error}</p>
+        <p className="text-red-600">{error}</p>
       ) : analysis ? (
-        <>
-          <pre className="whitespace-pre-line text-gray-700">{analysis}</pre>
-          {/* <Typewriter message={analysis} speed={30} /> */}
-        </>
+        <AnalysisReport data={analysis} />
       ) : (
-        <p>No analysis available</p>
+        <p className="text-gray-700">No analysis available</p>
       )}
     </div>
   );
