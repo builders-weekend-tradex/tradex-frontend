@@ -6,13 +6,12 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="p-6">
-      {/* <div> */}
+    <main className="p-6">
       <Header />
       {/* Outlet will update dynamically based on the current route */}
       <Outlet />
       <Footer />
-    </div>
+    </main>
   );
 }
 

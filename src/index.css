@@ -1,8 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import "tailwindcss";
+
+#root {
+  margin: 0;
+  padding: 0;
+}
 
 .animate-fadeInScale {
   animation: fadeInScale 10s ease-in-out forwards;
@@ -32,19 +33,4 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #dcdcdc;
 }
