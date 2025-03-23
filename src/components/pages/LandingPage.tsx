@@ -11,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Banner from "../../assets/image1.jpeg";
+import Banner from "../../assets/day-trading-floor.jpeg";
 
 const LandingPage: React.FC = () => {
   const { t } = useTranslation();

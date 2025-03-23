@@ -2,7 +2,7 @@ import { useTicker } from "../../hooks/useTicker";
 import { useTranslation } from "react-i18next";
 import { ActiveTab } from "../../types/enums";
 import { ArrowRight } from "lucide-react";
-import TickerInputBackground from "../../../src/assets/image1.jpeg";
+import TickerInputBackground from "../../../src/assets/day-trading-floor.jpeg";
 
 interface TickerInputProps {
   setActiveTab: (tab: ActiveTab) => void;
