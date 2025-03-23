@@ -14,7 +14,6 @@ const daysAgo = (publishedAt: string | number | Date): string => {
   return `${daysDifference} days ago`;
 };
 
-// Ensure publishedAt is part of the NewsArticle interface
 export interface NewsArticle {
   title: string;
   publishedAt: string;

@@ -44,8 +44,8 @@ const LexiChat: React.FC = () => {
   const handleSendMessage = async () => {
     if (!newMessage.trim()) return;
 
-    setAllMessages((prev) => [
-      ...prev,
+    setAllMessages((previousMessages) => [
+      ...previousMessages,
       { sender: "user", content: newMessage },
     ]);
 
@@ -54,8 +54,8 @@ const LexiChat: React.FC = () => {
 
     try {
       const res = await chatWithLexi(newMessage);
-      setAllMessages((prev) => [
-        ...prev,
+      setAllMessages((previousMessages) => [
+        ...previousMessages,
         { sender: "lexi", content: res.response },
       ]);
     } catch {
