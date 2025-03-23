@@ -35,7 +35,15 @@ const NewsArticles: React.FC = () => {
       try {
         const cachedNews = sessionStorage.getItem(`news_${ticker}`);
         if (cachedNews) {
-          setNews(JSON.parse(cachedNews));
+          const parsedNews = JSON.parse(cachedNews);
+          if (Array.isArray(parsedNews)) {
+            setNews(parsedNews);
+          } else if (
+            parsedNews?.articles &&
+            Array.isArray(parsedNews.articles)
+          ) {
+            setNews(parsedNews.articles);
+          }
           setLoading(false);
           return;
         }
@@ -43,12 +51,19 @@ const NewsArticles: React.FC = () => {
         const result = await fetchNews(ticker);
         console.log("API Response:", result);
 
-        setNews(result.articles); // Accessing the articles from the response
-        sessionStorage.setItem(
-          `news_${ticker}`,
-          JSON.stringify(result.articles)
-        );
-      } catch {
+        // Check if the result has articles and if it's an array
+        if (result && Array.isArray(result.articles)) {
+          setNews(result.articles);
+          sessionStorage.setItem(
+            `news_${ticker}`,
+            JSON.stringify(result.articles)
+          );
+        } else {
+          setNews([]); // Set to an empty array if data is invalid
+          setError("No news articles available.");
+        }
+      } catch (error) {
+        console.error("Error fetching news:", error);
         setError("Failed to fetch news.");
       } finally {
         setLoading(false);
