@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NewsArticle } from "../../../types/interfaces";
+// import { NewsArticle } from "../../../types/interfaces";
 import { fetchNews } from "../../../utilities/api";
 import { useTicker } from "../../../hooks/useTicker";
 
@@ -16,9 +16,9 @@ const daysAgo = (publishedAt: string | number | Date): string => {
 
 // Ensure publishedAt is part of the NewsArticle interface
 export interface NewsArticle {
-  url: string;
   title: string;
-  publishedAt: string; // Ensure this property exists
+  publishedAt: string;
+  url: string;
 }
 
 const NewsArticles: React.FC = () => {
@@ -43,7 +43,7 @@ const NewsArticles: React.FC = () => {
         const result = await fetchNews(ticker);
         console.log("API Response:", result);
 
-        setNews(result.articles); // Assuming the API response has a structure { symbol, articles }
+        setNews(result.articles); // Accessing the articles from the response
         sessionStorage.setItem(
           `news_${ticker}`,
           JSON.stringify(result.articles)
@@ -74,7 +74,7 @@ const NewsArticles: React.FC = () => {
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-900 text-xl font-bold text-left"
+                className="text-gray-900 text-xl font-bold"
               >
                 {article.title}
               </a>
