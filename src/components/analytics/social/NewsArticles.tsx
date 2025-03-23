@@ -43,6 +43,7 @@ const NewsArticles: React.FC = () => {
         }
 
         const result = await fetchNews(ticker);
+        console.log("API Response:", result);
         setNews(result);
 
         sessionStorage.setItem(`news_${ticker}`, JSON.stringify(result));
@@ -77,7 +78,7 @@ const NewsArticles: React.FC = () => {
                 {article.title}
               </a>
               <p className="text-gray-400 text-sm mt-2">
-                {daysAgo(article.publishedAt)}
+                {daysAgo(article.publishedAt ?? new Date())}
               </p>
             </li>
           </div>
