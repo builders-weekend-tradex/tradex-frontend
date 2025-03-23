@@ -61,9 +61,6 @@ const NewsArticles: React.FC = () => {
 
   return (
     <div>
-      {/* <h2 className="text-gray-900 text-2xl font-bold text-left pl-3">
-        {t("analytics_page.socials.news")}
-      </h2> */}
       <ul>
         {news?.articles?.map((article) => (
           <div

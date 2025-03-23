@@ -1,6 +1,5 @@
 import { useState } from "react";
 import SocialTab from "../analytics/social/SocialTab";
-// import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
 import TechnicalsTab from "../analytics/technicals/TechnicalsTab";
 import LexiChat from "../analytics/chat/LexiChat";
 import { ActiveTab } from "../../types/enums";
@@ -49,16 +48,6 @@ const AnalyticsPage: React.FC = () => {
         >
           {t("analytics_page.tabs.social")}
         </button>
-        {/* <button
-          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
-            activeTab === ActiveTab.Fundamentals
-              ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
-              : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
-          }`}
-          onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
-        >
-          {t("analytics_page.tabs.fundamentals")}
-        </button> */}
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.LexiChat
@@ -79,7 +68,6 @@ const AnalyticsPage: React.FC = () => {
         )}
         {activeTab === ActiveTab.Technicals && <TechnicalsTab />}
         {activeTab === ActiveTab.Social && <SocialTab />}
-        {/* {activeTab === ActiveTab.Fundamentals && <FundamentalsTab />} */}
         {activeTab === ActiveTab.LexiChat && <LexiChat />}
       </div>
     </div>

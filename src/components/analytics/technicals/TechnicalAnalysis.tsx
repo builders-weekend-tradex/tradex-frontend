@@ -21,11 +21,9 @@ const TechnicalAnalysis: React.FC = () => {
     try {
       const cachedAnalysis = localStorage.getItem(ticker); // Check for cached analysis using ticker as key
       if (cachedAnalysis) {
-        console.log("Using cached analysis data.");
         setAnalysis(cachedAnalysis); // Use cached data
         setLoading(false); // Stop loading since data is available
       } else {
-        console.log("Fetching new analysis data.");
         const response = await fetchTechnicalAnalysis(ticker);
         setAnalysis(response.analysis);
         localStorage.setItem(ticker, response.analysis); // Cache the data using ticker as the key
