@@ -111,7 +111,9 @@ const LexiChat: React.FC = () => {
           disabled={loading}
           className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-gray-300 mt-2"
         >
-          {loading ? "Sending..." : t("analytics_page.lexi_chat.button")}
+          {loading
+            ? t("analytics_page.lexi_chat.sending")
+            : t("analytics_page.lexi_chat.button")}
         </button>
       </div>
 

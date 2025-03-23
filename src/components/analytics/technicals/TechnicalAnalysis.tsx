@@ -23,11 +23,11 @@ const TechnicalAnalysis: React.FC = () => {
       if (cachedAnalysis) {
         setAnalysis(cachedAnalysis); // Use cached data
         setLoading(false); // Stop loading since data is available
-      } else {
-        const response = await fetchTechnicalAnalysis(ticker);
-        setAnalysis(response.analysis);
-        sessionStorage.setItem(ticker, response.analysis); // Cache the data using ticker as the key
+        return;
       }
+      const response = await fetchTechnicalAnalysis(ticker);
+      setAnalysis(response.analysis);
+      sessionStorage.setItem(ticker, response.analysis); // Cache the data using ticker as the key
     } catch {
       handleError("Failed to load technical analysis.");
     } finally {

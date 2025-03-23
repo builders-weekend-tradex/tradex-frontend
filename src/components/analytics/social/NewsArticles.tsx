@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
-// import { NewsArticle } from "../../../types/interfaces";
 import { fetchNews } from "../../../utilities/api";
 import { useTicker } from "../../../hooks/useTicker";
+import { useTranslation } from "react-i18next";
 
-const daysAgo = (publishedAt: string | number | Date): string => {
+const daysAgo = (
+  publishedAt: string | number | Date,
+  t: (key: string) => string
+): string => {
   const today = new Date();
   const publishedDate = new Date(publishedAt);
   const timeDiff = today.getTime() - publishedDate.getTime();
   const daysDifference = Math.floor(timeDiff / (1000 * 3600 * 24));
 
-  if (daysDifference === 0) return "Today";
-  if (daysDifference === 1) return "1 day ago";
-  return `${daysDifference} days ago`;
+  if (daysDifference === 0) return t("analytics.socials.news.today");
+  if (daysDifference === 1) return t("analytics.socials.news.yesterday");
+  return `${daysDifference} ${t("analytics.socials.news.days_ago")}`;
 };
 
 export interface NewsArticle {
@@ -25,6 +28,7 @@ const NewsArticles: React.FC = () => {
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const loadNews = async () => {
@@ -48,7 +52,6 @@ const NewsArticles: React.FC = () => {
         }
 
         const result = await fetchNews(ticker);
-        console.log("API Response:", result);
 
         // Check if the result has articles and if it's an array
         if (result && Array.isArray(result.articles)) {
@@ -72,7 +75,7 @@ const NewsArticles: React.FC = () => {
     loadNews();
   }, [ticker]);
 
-  if (loading) return <p>Loading news...</p>;
+  if (loading) return <p>{t("analytics_page.socials.news.loading")}</p>;
   if (error) return <p>{error}</p>;
 
   return (
@@ -93,7 +96,7 @@ const NewsArticles: React.FC = () => {
                 {article.title}
               </a>
               <p className="text-gray-400 text-sm mt-2">
-                {daysAgo(article.publishedAt)}
+                {daysAgo(article.publishedAt, t)}
               </p>
             </li>
           </div>

@@ -108,7 +108,13 @@
       "ticker_input": "Ticker Input!"
     },
     "socials": {
-      "news": "News!",
+      "news": {
+        "title": "News",
+        "days_ago": "days ago!",
+        "today": "Today!",
+        "yesterday": "Yesterday!",
+        "loading": "Loading...!"
+      },
       "sentiment_score": "Sentiment Score!"
     },
     "fundamentals": {
@@ -124,7 +130,8 @@
     },
     "lexi_chat": {
       "placeholder": "Ask Lexi a question...!",
-      "button": "Send!"
+      "button": "Send!",
+      "sending": "Sending...!"
     }
   },
   "footer": {
