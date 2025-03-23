@@ -1,155 +1,146 @@
 {
   "header": {
     "features": "特徴",
-    "pricing": "価格",
+    "pricing": "料金",
     "testimonials": "お客様の声",
     "analytics": "分析",
     "sign-in": "サインイン"
   },
   "landing_page": {
     "hero": {
-      "title_black": "Revolutionize Your",
-      "title_blue": "Investment Strategy",
-      "subtitle": "TradEx leverages AI-powered insights to provide deep financial analysis, predictive insights, and market intelligence on JAXA-listed companies, bridging the gap between retail and institutional investors.",
-      "placeholder": "Enter your email address",
-      "join": "Join Waitlist"
+      "title_black": "あなたの",
+      "title_blue": "投資戦略を革命的に変える",
+      "subtitle": "TradExはAIを活用した洞察により、JAXA上場企業に関する深い金融分析、予測的洞察、市場情報を提供し、小口投資家と機関投資家のギャップを埋めます。",
+      "placeholder": "メールアドレスを入力してください",
+      "join": "待機リストに参加"
     },
     "feature_section": {
-      "title": "Features",
-      "subtitle": "AI-Powered Fundamental Analysis",
-      "subheading": "Make data-driven investment decisions with our cutting-edge AI technology.",
+      "title": "特徴",
+      "subtitle": "AI駆動の基礎分析",
+      "subheading": "最先端のAI技術を活用して、データに基づいた投資判断を行います。",
       "feature_1": {
-        "title": " Deep Financial Analysis",
-        "description": "Comprehensive analysis of financial statements, earnings reports, and key performance indicators."
+        "title": "深い金融分析",
+        "description": "財務諸表、収益報告書、主要業績指標の包括的分析。"
       },
       "feature_2": {
-        "title": "Predictive Insights",
-        "description": "AI-driven forecasting models to predict stock performance and market trends."
+        "title": "予測的洞察",
+        "description": "株式パフォーマンスや市場動向を予測するAI駆動のモデル。"
       },
       "feature_3": {
-        "title": "LLM-Based Models",
-        "description": "Advanced language models that analyze reports and uncover hidden investment opportunities."
+        "title": "LLMベースのモデル",
+        "description": "レポートを分析し、隠れた投資機会を発見する高度な言語モデル。"
       },
       "feature_4": {
-        "title": "Community Insights",
-        "description": "Foster a community of data-driven investors through shared analytics and discussions."
+        "title": "コミュニティの洞察",
+        "description": "データ駆動型の投資家コミュニティを構築し、共有分析や議論を行います。"
       },
       "feature_5": {
-        "title": "Transparent & Trustworthy",
-        "description": "Unbiased and explainable financial insights you can trust for your investment decisions."
+        "title": "透明で信頼できる",
+        "description": "投資判断に信頼できる、バイアスのない説明可能な金融洞察。"
       },
       "feature_6": {
-        "title": "Real-time Market Intelligence",
-        "description": "Stay ahead with up-to-the-minute financial data and market analysis."
+        "title": "リアルタイム市場情報",
+        "description": "最新の金融データと市場分析で先を行きましょう。"
       }
     },
     "pricing_section": {
-      "title": "Pricing",
-      "subtitle": "Plans for Every Investor",
-      "subheading": " From casual investors to professional fund managers, we have a plan that fits your needs.",
+      "title": "料金",
+      "subtitle": "すべての投資家向けプラン",
+      "subheading": "初心者からプロのファンドマネージャーまで、あなたに合ったプランがあります。",
       "free_plan": {
-        "title": "Free",
-        "description": "For beginners and casual investors",
+        "title": "無料",
+        "description": "初心者とカジュアルな投資家向け",
         "price": "$0",
-        "price_suffix": "/mo",
-        "li_1": "Basic financial statement analysis",
-        "li_2": "Limited news sentiment analysis",
-        "li_3": "Community access",
-        "cta": "Get Started"
+        "price_suffix": "/月",
+        "li_1": "基本的な財務分析",
+        "li_2": "限定的なニュース感情分析",
+        "li_3": "コミュニティアクセス",
+        "cta": "開始する"
       },
       "premium_plan": {
-        "title": "Premium",
-        "description": "For active investors",
+        "title": "プレミアム",
+        "description": "アクティブな投資家向け",
         "price": "$25",
-        "price_suffix": "/mo",
-        "li_1": "Full access to AI analysis",
-        "li_2": "Deep financial insights",
-        "li_3": "AI-generated earnings summaries",
-        "cta": "Subscribe"
+        "price_suffix": "/月",
+        "li_1": "AI分析への完全アクセス",
+        "li_2": "深い財務洞察",
+        "li_3": "AI生成の収益サマリー",
+        "cta": "購読"
       },
       "pro_plan": {
-        "popular": "Popular",
-        "title": "Pro",
-        "description": "For institutional investors",
+        "popular": "人気",
+        "title": "プロ",
+        "description": "機関投資家向け",
         "price": "$79",
-        "price_suffix": "/mo",
-        "li_1": "Advanced AI-powered analytics",
-        "li_2": "Real-time financial forecasting",
-        "li_3": "Custom API access",
-        "cta": "Subscribe"
+        "price_suffix": "/月",
+        "li_1": "高度なAI駆動の分析",
+        "li_2": "リアルタイムの金融予測",
+        "li_3": "カスタムAPIアクセス",
+        "cta": "購読"
       },
       "enterprise_plan": {
-        "title": "Enterprise",
-        "description": "For financial institutions",
-        "price": "Custom",
-        "li_1": "White-label solutions",
-        "li_2": "API integrations",
-        "li_3": "Dedicated advisory services",
-        "cta": "Contact Sales"
+        "title": "エンタープライズ",
+        "description": "金融機関向け",
+        "price": "カスタム",
+        "li_1": "ホワイトラベルソリューション",
+        "li_2": "API統合",
+        "li_3": "専用のアドバイザリーサービス",
+        "cta": "営業に連絡"
       }
     },
     "cta_section": {
-      "title": "Ready to transform your investment strategy?",
-      "subtitle": "Join the waitlist today.",
-      "cta": "Get Started"
+      "title": "あなたの投資戦略を変革する準備はできましたか？",
+      "subtitle": "今すぐ待機リストに参加しましょう。",
+      "cta": "開始する"
     }
   },
   "analytics_page": {
     "ticker_input": {
-      "label": "Enter a Ticker Symbol!",
-      "placeholder": "Example: AAPL!",
-      "button": "Search!"
+      "label": "ティッカーシンボルを入力",
+      "placeholder": "例: AAPL",
+      "button": "検索"
     },
     "tabs": {
-      "social": "Social!",
-      "fundamentals": "Fundamentals!",
-      "technicals": "Technicals!",
-      "lexi_chat": "Lexi Chat!"
+      "social": "ソーシャル",
+      "fundamentals": "ファンダメンタルズ",
+      "technicals": "テクニカル",
+      "lexi_chat": "Lexiチャット",
+      "ticker_input": "ティッカー"
     },
     "socials": {
-      "news": "News!",
-      "sentiment_score": "Sentiment Score!"
+      "news": {
+        "title": "ニュース",
+        "days_ago": "日前",
+        "today": "今日",
+        "yesterday": "昨日",
+        "loading": "読み込み中..."
+      },
+      "sentiment_score": "感情スコア"
     },
     "fundamentals": {
-      "about_company": "About Company!",
-      "financial_sheet": "Financial Sheet!",
-      "management_info": "Management Info!"
+      "about_company": "会社情報",
+      "financial_sheet": "財務シート",
+      "management_info": "経営情報"
     },
     "technicals": {
-      "averages_chart": "Averages Chart!",
-      "buy_sell_chart": "Buy Sell Chart!",
-      "price_table": "Price Table!",
-      "technical_analysis": "Technical Analysis!"
+      "technical_analysis": "テクニカル分析",
+      "analysis_append": "さらに詳細な洞察はLexiチャットで確認できます。",
+      "technical_indicators": "テクニカル指標",
+      "all_charts": {
+        "laoding": "チャートを読み込み中",
+        "error": "エラー:"
+      }
     },
     "lexi_chat": {
-      "placeholder": "Ask Lexi a question...!",
-      "button": "Send!"
+      "placeholder": "Lexiに質問を聞いてみてください...",
+      "button": "送信",
+      "sending": "送信中..."
     }
   },
   "footer": {
-    "sections": {
-      "product": "製品",
-      "resources": "リソース",
-      "company": "会社情報",
-      "legal": "法務"
-    },
     "links": {
-      "features": "特徴",
-      "pricing": "価格",
-      "api": "API",
-      "integrations": "統合",
-      "documentation": "ドキュメント",
-      "guides": "ガイド",
-      "api_reference": "API リファレンス",
-      "blog": "ブログ",
-      "about": "会社概要",
-      "careers": "採用情報",
-      "press": "プレス",
-      "contact": "お問い合わせ",
-      "privacy": "プライバシー",
-      "terms": "利用規約",
-      "cookie_policy": "クッキーポリシー",
-      "licenses": "ライセンス"
+      "contact": "連絡先",
+      "privacy": "プライバシー"
     },
     "copyright": "2025 TradEx."
   }

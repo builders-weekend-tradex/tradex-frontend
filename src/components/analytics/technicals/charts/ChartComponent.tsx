@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fetchSingleChart } from "../../../../utilities/api";
 import { ChartComponentProps } from "../../../../types/interfaces";
+import TradexLogo from "../../../../assets/tradex-logo.svg";
 
 const ChartComponent: React.FC<ChartComponentProps> = ({
   ticker,
@@ -52,11 +53,24 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
   }, [chartHtml]);
 
   return (
-    <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow">
+    <div className="mt-6 p-4 min-h-130 min-w-60 flex justify-center items-center">
       {loading ? (
-        <p>Loading chart...</p>
+        <div>
+          <img
+            src={TradexLogo}
+            alt="Loading"
+            className="w-40 h-40 animate-pulse "
+          />
+        </div>
       ) : error ? (
-        <p>{error}</p>
+        <div>
+          <img
+            src={TradexLogo}
+            alt="Loading"
+            className="w-40 h-40 animate-pulse "
+          />
+          <p className="text-gray-900 bg-black">{error}</p>
+        </div>
       ) : (
         <div ref={chartContainerRef} />
       )}

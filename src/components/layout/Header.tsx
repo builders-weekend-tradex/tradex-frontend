@@ -2,6 +2,7 @@ import { useState } from "react";
 import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import TradexLogo from "../../assets/tradex-logo-header.svg";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
@@ -27,11 +28,12 @@ const Header: React.FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex  h-16 w-full">
           <div className="flex items-center w-full">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 items-center">
               <Link to="/">
-                <span className="ml-2 text-2xl font-bold text-blue-800">
+                {/* <span className="ml-2 text-2xl font-bold text-blue-800">
                   TradEx
-                </span>
+                </span> */}
+                <img className="h-24 w-24" src={TradexLogo} alt="Tradex Logo" />
               </Link>
             </div>
             <div className="hidden sm:flex sm:flex-grow sm:ml-6 sm:space-x-8">
@@ -56,9 +58,9 @@ const Header: React.FC = () => {
               </Link>
             </div>
             <div className="hidden sm:flex sm:items-center sm:justify-end sm:gap-2">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+              {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
                 {t("header.sign-in")}
-              </button>
+              </button> */}
               <LanguageSelector />
             </div>
           </div>

@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 10s ease-in-out forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -15,13 +33,4 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #dcdcdc;
 }

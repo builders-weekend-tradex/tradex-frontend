@@ -104,10 +104,17 @@
       "social": "Social",
       "fundamentals": "Fundamentals",
       "technicals": "Technicals",
-      "lexi_chat": "Lexi Chat"
+      "lexi_chat": "Lexi Chat",
+      "ticker_input": "Ticker"
     },
     "socials": {
-      "news": "News",
+      "news": {
+        "title": "News",
+        "days_ago": "days ago",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "loading": "Loading..."
+      },
       "sentiment_score": "Sentiment Score"
     },
     "fundamentals": {
@@ -116,40 +123,24 @@
       "management_info": "Management Info"
     },
     "technicals": {
-      "averages_chart": "Averages Chart",
-      "buy_sell_chart": "Buy Sell Chart",
-      "price_table": "Price Table",
-      "technical_analysis": "Technical Analysis"
+      "technical_analysis": "Technical Analysis",
+      "analysis_append": "Head over to Lexi Chat to gather more insights.",
+      "technical_indicators": "Technical Indicators",
+      "all_charts": {
+        "laoding": "Loading Charts",
+        "error": "Error:"
+      }
     },
     "lexi_chat": {
       "placeholder": "Ask Lexi a question...",
-      "button": "Send"
+      "button": "Send",
+      "sending": "Sending..."
     }
   },
   "footer": {
-    "sections": {
-      "product": "Product",
-      "resources": "Resources",
-      "company": "Company",
-      "legal": "Legal"
-    },
     "links": {
-      "features": "Features",
-      "pricing": "Pricing",
-      "api": "API",
-      "integrations": "Integrations",
-      "documentation": "Documentation",
-      "guides": "Guides",
-      "api_reference": "API Reference",
-      "blog": "Blog",
-      "about": "About",
-      "careers": "Careers",
-      "press": "Press",
       "contact": "Contact",
-      "privacy": "Privacy",
-      "terms": "Terms",
-      "cookie_policy": "Cookie Policy",
-      "licenses": "Licenses"
+      "privacy": "Privacy"
     },
     "copyright": "2025 TradEx."
   }

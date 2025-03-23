@@ -8,60 +8,93 @@ import WilliamsChart from "./charts/WilliamsChart";
 import ADXChart from "./charts/ADXChart";
 import CMFChart from "./charts/CMFChart";
 import TechnicalAnalysis from "./TechnicalAnalysis";
+import { useTranslation } from "react-i18next";
 
 const TechnicalsTab: React.FC = () => {
+  const { t } = useTranslation();
   return (
-    <div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Price Trend</h2>
-        <PriceTrendChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Volume</h2>
-        <VolumeChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">MACD</h2>
+    <div className="min-h-full h-full w-full relative">
+      <div className="grid lg:grid-cols-1 ">
+        <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2">
+          <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
+            {t("analytics_page.technicals.technical_analysis")}
+          </h2>
+        </div>
 
-        <MACDChart />
+        <div className="bg-white p-4 shadow-sm space-y-4 mt-4">
+          <TechnicalAnalysis />
+        </div>
       </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">RSI</h2>
 
-        <RSIChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Bollinger Bands</h2>
+      <div className="grid lg:grid-cols-1 xl:grid-cols-2 gap-4">
+        <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2 mt-4">
+          <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
+            {t("analytics_page.technicals.technical_indicators")}
+          </h2>
+        </div>
 
-        <BollingerBandsChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">
-          Stochastic Oscillator
-        </h2>
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            Price Trend
+          </h2>
+          <PriceTrendChart />
+        </div>
 
-        <StochasticOscillatorChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">Williams</h2>
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            Volume
+          </h2>
+          <VolumeChart />
+        </div>
 
-        <WilliamsChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">ADX</h2>
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            MACD
+          </h2>
+          <MACDChart />
+        </div>
 
-        <ADXChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">CMF</h2>
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            RSI
+          </h2>
+          <RSIChart />
+        </div>
 
-        <CMFChart />
-      </div>
-      <div className="bg-white min-h-full">
-        <h2 className="text-lg text-gray-800 font-semibold">
-          Technical Analysis
-        </h2>
-        <TechnicalAnalysis />
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            Bollinger Bands
+          </h2>
+          <BollingerBandsChart />
+        </div>
+
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            Stochastic Oscillator
+          </h2>
+          <StochasticOscillatorChart />
+        </div>
+
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            Williams
+          </h2>
+          <WilliamsChart />
+        </div>
+
+        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            ADX
+          </h2>
+          <ADXChart />
+        </div>
+
+        <div className="bg-white p-6 shadow-sm space-y-4 xl:col-span-2 place-items-center mb-4">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            CMF
+          </h2>
+          <CMFChart />
+        </div>
       </div>
     </div>
   );
