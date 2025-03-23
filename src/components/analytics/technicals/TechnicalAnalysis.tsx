@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchTechnicalAnalysis } from "../../../utilities/api";
 import { useTicker } from "../../../hooks/useTicker";
 import TradexLogo from "../../../assets/tradex-logo.svg";
+import { useTranslation } from "react-i18next";
 
 const TechnicalAnalysis: React.FC = () => {
   const [analysis, setAnalysis] = useState<string | null>(null);
@@ -42,7 +43,7 @@ const TechnicalAnalysis: React.FC = () => {
   // Helper component to format and display analysis sections
   const AnalysisReport = ({ data }: { data: string }) => {
     const sections = data.split("\n\n");
-
+    const { t } = useTranslation();
     return (
       <div className="p-4 max-w-4xl mx-auto my-6 p-8">
         {sections.map((section, index) => {
@@ -80,7 +81,7 @@ const TechnicalAnalysis: React.FC = () => {
           );
         })}
         <p className="mt-4 text-gray-500 italic">
-          Head over to Lexi Chat to gather more insights.
+          {t("analytics_page.technicals.analysis_append")}
         </p>
       </div>
     );

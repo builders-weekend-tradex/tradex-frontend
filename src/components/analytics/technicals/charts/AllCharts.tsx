@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTicker } from "../../../../hooks/useTicker";
+import { useTranslation } from "react-i18next";
 
 const AllCharts: React.FC = () => {
   const [chartHtml, setChartHtml] = useState<string>("");
@@ -7,6 +8,7 @@ const AllCharts: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const chartContainerRef = useRef<HTMLDivElement | null>(null);
   const { ticker } = useTicker();
+  const { t } = useTranslation();
 
   const loadCharts = async () => {
     setLoading(true);
@@ -53,9 +55,11 @@ const AllCharts: React.FC = () => {
   return (
     <div className="mt-6 p-4 bg-gray-100 rounded-lg shadow">
       {loading ? (
-        <p>Loading charts...</p>
+        <p>{t("analytics_page.technicals.all_charts.loading")}</p>
       ) : error ? (
-        <p>Error: {error}</p>
+        <p>
+          {t("analytics_page.technicals.all_charts.error")} {error}
+        </p>
       ) : (
         <div ref={chartContainerRef} />
       )}

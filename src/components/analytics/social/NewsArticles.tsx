@@ -12,9 +12,9 @@ const daysAgo = (
   const timeDiff = today.getTime() - publishedDate.getTime();
   const daysDifference = Math.floor(timeDiff / (1000 * 3600 * 24));
 
-  if (daysDifference === 0) return t("analytics.socials.news.today");
-  if (daysDifference === 1) return t("analytics.socials.news.yesterday");
-  return `${daysDifference} ${t("analytics.socials.news.days_ago")}`;
+  if (daysDifference === 0) return t("analytics_page.socials.news.today");
+  if (daysDifference === 1) return t("analytics_page.socials.news.yesterday");
+  return `${daysDifference} ${t("analytics_page.socials.news.days_ago")}`;
 };
 
 export interface NewsArticle {

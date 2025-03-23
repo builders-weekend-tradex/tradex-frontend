@@ -8,14 +8,16 @@ import WilliamsChart from "./charts/WilliamsChart";
 import ADXChart from "./charts/ADXChart";
 import CMFChart from "./charts/CMFChart";
 import TechnicalAnalysis from "./TechnicalAnalysis";
+import { useTranslation } from "react-i18next";
 
 const TechnicalsTab: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-full h-full w-full relative">
       <div className="grid lg:grid-cols-1 ">
         <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2">
           <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
-            Technical Analysis
+            {t("analytics_page.technicals.technical_analysis")}
           </h2>
         </div>
 
@@ -27,7 +29,7 @@ const TechnicalsTab: React.FC = () => {
       <div className="grid lg:grid-cols-1 xl:grid-cols-2 gap-4">
         <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2 mt-4">
           <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
-            Technical Indicators
+            {t("analytics_page.technicals.technical_indicators")}
           </h2>
         </div>
 
