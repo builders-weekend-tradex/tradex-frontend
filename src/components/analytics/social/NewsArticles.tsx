@@ -24,6 +24,7 @@ const NewsArticles: React.FC = () => {
   const [news, setNews] = useState<{
     symbol: string;
     articles: NewsArticle[];
+    publishedAt: string;
   } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
