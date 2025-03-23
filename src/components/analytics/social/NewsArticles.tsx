@@ -35,7 +35,7 @@ const NewsArticles: React.FC = () => {
       setError(null);
 
       try {
-        const cachedNews = localStorage.getItem(`news_${ticker}`);
+        const cachedNews = sessionStorage.getItem(`news_${ticker}`);
         if (cachedNews) {
           setNews(JSON.parse(cachedNews));
           setLoading(false);
@@ -45,7 +45,7 @@ const NewsArticles: React.FC = () => {
         const result = await fetchNews(ticker);
         setNews(result);
 
-        localStorage.setItem(`news_${ticker}`, JSON.stringify(result));
+        sessionStorage.setItem(`news_${ticker}`, JSON.stringify(result));
       } catch {
         setError("Failed to fetch news.");
       } finally {

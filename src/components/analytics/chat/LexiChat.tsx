@@ -13,7 +13,7 @@ const LexiChat: React.FC = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    const cachedMessages = localStorage.getItem("lexiChatMessages");
+    const cachedMessages = sessionStorage.getItem("lexiChatMessages");
     if (cachedMessages) {
       setAllMessages(JSON.parse(cachedMessages));
     }
@@ -21,7 +21,7 @@ const LexiChat: React.FC = () => {
 
   useEffect(() => {
     if (allMessages.length > 0) {
-      localStorage.setItem("lexiChatMessages", JSON.stringify(allMessages));
+      sessionStorage.setItem("lexiChatMessages", JSON.stringify(allMessages));
     }
   }, [allMessages]);
 
