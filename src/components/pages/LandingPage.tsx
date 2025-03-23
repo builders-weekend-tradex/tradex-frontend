@@ -11,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import image1 from "../../assets/image1.jpeg";
+import Banner from "../../assets/image1.jpeg";
 
 const LandingPage: React.FC = () => {
   const { t } = useTranslation();
@@ -32,7 +32,7 @@ const LandingPage: React.FC = () => {
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={image1}
+            src={Banner}
             alt="Trading dashboard"
             className="h-full w-full object-cover"
           />

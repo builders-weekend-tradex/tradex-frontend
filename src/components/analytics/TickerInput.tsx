@@ -2,7 +2,7 @@ import { useTicker } from "../../hooks/useTicker";
 import { useTranslation } from "react-i18next";
 import { ActiveTab } from "../../types/enums";
 import { ArrowRight } from "lucide-react";
-import image1 from "../../../src/assets/image1.jpeg";
+import TickerInputBackground from "../../../src/assets/image1.jpeg";
 
 interface TickerInputProps {
   setActiveTab: (tab: ActiveTab) => void;
@@ -25,7 +25,7 @@ const TickerInput: React.FC<TickerInputProps> = ({ setActiveTab }) => {
       <div className="hidden lg:block lg:absolute lg:inset-0">
         <img
           className="h-full w-full object-cover"
-          src={image1}
+          src={TickerInputBackground}
           alt="Trading dashboard"
         />
         <div className="absolute inset-0 bg-black opacity-50 "></div>
