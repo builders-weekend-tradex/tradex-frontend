@@ -9,23 +9,21 @@ const daysAgo = (publishedAt: string | number | Date): string => {
   const timeDiff = today.getTime() - publishedDate.getTime();
   const daysDifference = Math.floor(timeDiff / (1000 * 3600 * 24));
 
-  if (daysDifference === 0) {
-    return "Today";
-  } else if (daysDifference === 1) {
-    return "1 day ago";
-  } else {
-    return `${daysDifference} days ago`;
-  }
+  if (daysDifference === 0) return "Today";
+  if (daysDifference === 1) return "1 day ago";
+  return `${daysDifference} days ago`;
 };
+
+// Ensure publishedAt is part of the NewsArticle interface
+export interface NewsArticle {
+  url: string;
+  title: string;
+  publishedAt: string; // Ensure this property exists
+}
 
 const NewsArticles: React.FC = () => {
   const { ticker } = useTicker();
-
-  const [news, setNews] = useState<{
-    symbol: string;
-    articles: NewsArticle[];
-    publishedAt: string;
-  } | null>(null);
+  const [news, setNews] = useState<NewsArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -44,9 +42,12 @@ const NewsArticles: React.FC = () => {
 
         const result = await fetchNews(ticker);
         console.log("API Response:", result);
-        setNews(result);
 
-        sessionStorage.setItem(`news_${ticker}`, JSON.stringify(result));
+        setNews(result.articles); // Assuming the API response has a structure { symbol, articles }
+        sessionStorage.setItem(
+          `news_${ticker}`,
+          JSON.stringify(result.articles)
+        );
       } catch {
         setError("Failed to fetch news.");
       } finally {
@@ -63,7 +64,7 @@ const NewsArticles: React.FC = () => {
   return (
     <div>
       <ul>
-        {news?.articles?.map((article) => (
+        {news.map((article) => (
           <div
             key={article.url}
             className="bg-white shadow-sm p-4 mb-2 border hover:shadow-xl transition text-left"
@@ -78,7 +79,7 @@ const NewsArticles: React.FC = () => {
                 {article.title}
               </a>
               <p className="text-gray-400 text-sm mt-2">
-                {daysAgo(article.publishedAt ?? new Date())}
+                {daysAgo(article.publishedAt)}
               </p>
             </li>
           </div>

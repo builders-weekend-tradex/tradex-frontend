@@ -1,6 +1,7 @@
 export interface NewsArticle {
   url: string;
   title: string;
+  publishedAt: string;
 }
 
 export interface ChartComponentProps {
