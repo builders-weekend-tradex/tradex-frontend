@@ -1,11 +1,13 @@
 import { useState } from "react";
 import LanguageSelector from "../language/LanguageSelector";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import TradexLogo from "../../assets/tradex-logo-header.svg";
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -21,6 +23,13 @@ const Header: React.FC = () => {
 
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (location.pathname !== "/") {
+      event.preventDefault();
+      navigate("/");
+    }
   };
 
   return (
@@ -40,12 +49,14 @@ const Header: React.FC = () => {
               <a
                 href="#features"
                 className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                onClick={handleClick}
               >
                 {t("header.features")}
               </a>
               <a
                 href="#pricing"
                 className="border-transparent text-gray-600 hover:border-blue-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                onClick={handleClick}
               >
                 {t("header.pricing")}
               </a>
