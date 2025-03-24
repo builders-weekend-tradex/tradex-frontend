@@ -79,6 +79,17 @@ const LexiChat: React.FC = () => {
     }
   }, [allMessages]);
 
+  // useEffect to clear the session storage cache when ticker context updates
+  useEffect(() => {
+    const previousTicker = sessionStorage.getItem("previousTicker") || "";
+
+    if (previousTicker !== ticker) {
+      sessionStorage.removeItem("lexiChatMessages");
+      setAllMessages([]);
+      sessionStorage.setItem("previousTicker", ticker || "");
+    }
+  }, [ticker]);
+
   const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewMessage(event.target.value);
     if (textareaRef.current) {
@@ -154,7 +165,7 @@ const LexiChat: React.FC = () => {
               }`}
             >
               <div
-                className={`px-4 py-2 rounded-lg max-w-4xl break-words ${
+                className={`px-4 py-2 rounded-lg max-w-4xl min-w-md break-words ${
                   msg.sender === "user"
                     ? "bg-blue-500 text-white"
                     : "bg-gray-800 text-white"
