@@ -10,7 +10,7 @@
     "hero": {
       "title_black": "Revolutionize Your",
       "title_blue": "Investment Strategy",
-      "subtitle": "TradEx leverages AI-powered insights to provide deep financial analysis, predictive insights, and market intelligence on JAXA-listed companies, bridging the gap between retail and institutional investors.",
+      "subtitle": "TradEx leverages AI-powered insights to provide deep financial analysis, predictive insights, and market intelligence on JPX-listed companies, bridging the gap between retail and institutional investors.",
       "placeholder": "Enter your email address",
       "join": "Join Waitlist"
     },
@@ -120,7 +120,8 @@
     "fundamentals": {
       "about_company": "About Company",
       "financial_sheet": "Financial Sheet",
-      "management_info": "Management Info"
+      "management_info": "Management Info",
+      "fundamental_analysis": "Fundamental Analysis"
     },
     "technicals": {
       "technical_analysis": "Technical Analysis",

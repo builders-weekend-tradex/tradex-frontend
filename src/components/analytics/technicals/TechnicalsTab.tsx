@@ -36,7 +36,7 @@ const TechnicalsTab: React.FC = () => {
 
         <div className="bg-white p-6 shadow-sm space-y-4 xl:col-span-2 place-items-center">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            Backtesting
+            Backtest
           </h2>
           <BacktestingChart />
         </div>

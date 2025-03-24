@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+// import React, { useState } from "react";
+// import { ToastContainer, toast } from "react-toastify";
 import {
   ArrowRight,
   BarChart2,
@@ -15,16 +15,16 @@ import Banner from "../../assets/day-trading-floor.jpeg";
 
 const LandingPage: React.FC = () => {
   const { t } = useTranslation();
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
 
-  const notify = () =>
-    toast(`Thank you for joining our waitlist with email: ${email}`);
+  // const notify = () =>
+  //   toast(`Thank you for joining our waitlist with email: ${email}`);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    notify();
-    setEmail("");
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   notify();
+  //   setEmail("");
+  // };
 
   return (
     <div className="min-h-screen text-gray-900">
@@ -52,7 +52,7 @@ const LandingPage: React.FC = () => {
               <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0">
                 {t("landing_page.hero.subtitle")}
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+              {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <form onSubmit={handleSubmit} className="sm:flex">
                   <input
                     type="email"
@@ -84,7 +84,7 @@ const LandingPage: React.FC = () => {
                     </button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
           </main>
         </div>

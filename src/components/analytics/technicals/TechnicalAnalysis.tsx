@@ -20,12 +20,12 @@ const TechnicalAnalysis: React.FC = () => {
     setError(null);
 
     try {
-      const cachedAnalysis = sessionStorage.getItem(ticker); // Check for cached analysis using ticker as key
-      if (cachedAnalysis) {
-        setAnalysis(cachedAnalysis); // Use cached data
-        setLoading(false); // Stop loading since data is available
-        return;
-      }
+      // const cachedAnalysis = sessionStorage.getItem(ticker); // Check for cached analysis using ticker as key
+      // if (cachedAnalysis) {
+      //   setAnalysis(cachedAnalysis); // Use cached data
+      //   setLoading(false); // Stop loading since data is available
+      //   return;
+      // }
       const response = await fetchTechnicalAnalysis(ticker);
       setAnalysis(response.analysis);
       sessionStorage.setItem(ticker, response.analysis); // Cache the data using ticker as the key

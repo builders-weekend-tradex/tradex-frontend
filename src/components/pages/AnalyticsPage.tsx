@@ -2,9 +2,10 @@ import { useState } from "react";
 import SocialTab from "../analytics/social/SocialTab";
 import TechnicalsTab from "../analytics/technicals/TechnicalsTab";
 import LexiChat from "../analytics/chat/LexiChat";
+import FundamentalsTab from "../analytics/fundamentals/FundamentalsTab";
+import TickerInput from "../analytics/TickerInput";
 import { ActiveTab } from "../../types/enums";
 import { useTranslation } from "react-i18next";
-import TickerInput from "../analytics/TickerInput";
 
 const AnalyticsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -40,6 +41,16 @@ const AnalyticsPage: React.FC = () => {
         </button>
         <button
           className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
+            activeTab === ActiveTab.Fundamentals
+              ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
+              : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
+          }`}
+          onClick={() => handleSetActiveTab(ActiveTab.Fundamentals)}
+        >
+          {t("analytics_page.tabs.fundamentals")}
+        </button>
+        <button
+          className={`flex-1 px-4 py-2 hover:bg-gray-100 rounded-lg focus:outline-none ${
             activeTab === ActiveTab.Social
               ? "bg-white text-gray-700 text-base font-semibold tracking-wide uppercase"
               : "bg-gray-200 text-gray-700 text-base font-semibold tracking-wide uppercase"
@@ -67,6 +78,7 @@ const AnalyticsPage: React.FC = () => {
           <TickerInput setActiveTab={setActiveTab} />
         )}
         {activeTab === ActiveTab.Technicals && <TechnicalsTab />}
+        {activeTab === ActiveTab.Fundamentals && <FundamentalsTab />}
         {activeTab === ActiveTab.Social && <SocialTab />}
         {activeTab === ActiveTab.LexiChat && <LexiChat />}
       </div>
