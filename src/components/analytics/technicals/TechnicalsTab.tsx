@@ -9,6 +9,7 @@ import ADXChart from "./charts/ADXChart";
 import CMFChart from "./charts/CMFChart";
 import TechnicalAnalysis from "./TechnicalAnalysis";
 import { useTranslation } from "react-i18next";
+import BacktestingChart from "./charts/BacktestingChart";
 
 const TechnicalsTab: React.FC = () => {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ const TechnicalsTab: React.FC = () => {
     <div className="min-h-full h-full w-full relative">
       <div className="grid lg:grid-cols-1 ">
         <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2">
-          <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
+          <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6 text-center">
             {t("analytics_page.technicals.technical_analysis")}
           </h2>
         </div>
@@ -28,9 +29,16 @@ const TechnicalsTab: React.FC = () => {
 
       <div className="grid lg:grid-cols-1 xl:grid-cols-2 gap-4">
         <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2 mt-4">
-          <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
+          <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6 text-center">
             {t("analytics_page.technicals.technical_indicators")}
           </h2>
+        </div>
+
+        <div className="bg-white p-6 shadow-sm space-y-4 xl:col-span-2 place-items-center">
+          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+            Backtesting
+          </h2>
+          <BacktestingChart />
         </div>
 
         <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
