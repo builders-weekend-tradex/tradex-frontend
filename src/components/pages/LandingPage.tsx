@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import React from "react";
+import { ToastContainer } from "react-toastify";
 import {
-  ArrowRight,
   BarChart2,
   Cpu,
   DollarSign,
@@ -12,19 +11,11 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Banner from "../../assets/day-trading-floor.jpeg";
+import { Link } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
   const { t } = useTranslation();
-  const [email, setEmail] = useState("");
 
-  const notify = () =>
-    toast(`Thank you for joining our waitlist with email: ${email}`);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    notify();
-    setEmail("");
-  };
 
   return (
     <div className="min-h-screen text-gray-900">
@@ -52,23 +43,13 @@ const LandingPage: React.FC = () => {
               <p className="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto lg:mx-0">
                 {t("landing_page.hero.subtitle")}
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <form onSubmit={handleSubmit} className="sm:flex">
-                  <input
-                    type="email"
-                    required
-                    placeholder={t("landing_page.hero.placeholder")}
-                    className="w-full bg-gray-100 px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"></div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <button
-                      type="submit"
-                      className="w-full lg:w-48 flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-lg md:px-6 "
-                    >
-                      {t("landing_page.hero.join")}
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      type="button"
+                      className="w-full lg:w-48 flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-3 md:text-lg md:px-6"
+                    ><Link to="/analytics" className="w-full h-full">
+                      {t("landing_page.hero.analytics")}</Link>
                       <ToastContainer
                         position="bottom-center"
                         autoClose={5000}
@@ -83,9 +64,7 @@ const LandingPage: React.FC = () => {
                       />
                     </button>
                   </div>
-                </form>
               </div>
-            </div>
           </main>
         </div>
       </div>
@@ -439,9 +418,6 @@ const LandingPage: React.FC = () => {
               <span className="block">
                 {t("landing_page.cta_section.title")}
               </span>
-              <span className="block text-blue-200">
-                {t("landing_page.cta_section.subtitle")}
-              </span>
             </h2>
           </div>
           <div className="mt-8 text-center">
@@ -449,8 +425,7 @@ const LandingPage: React.FC = () => {
               href="#"
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50"
             >
-              {t("landing_page.cta_section.cta")}
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/analytics">{t("landing_page.cta_section.cta")}</Link>
             </a>
           </div>
           {/* </div> */}
