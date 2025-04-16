@@ -1,20 +1,28 @@
-import MACDChart from "./charts/MACDChart";
-import PriceTrendChart from "./charts/PriceTrendChart";
-import VolumeChart from "./charts/VolumeChart";
-import RSIChart from "./charts/RSIChart";
-import BollingerBandsChart from "./charts/BollingerBandsChart";
-import StochasticOscillatorChart from "./charts/StochasticOscillatorChart";
-import WilliamsChart from "./charts/WilliamsChart";
-import ADXChart from "./charts/ADXChart";
-import CMFChart from "./charts/CMFChart";
+import ChartComponent from "./charts/ChartComponent";
 import TechnicalAnalysis from "./TechnicalAnalysis";
 import { useTranslation } from "react-i18next";
 
+const chartConfigs = [
+  { title: "Price Trend", name: "price_trend" },
+  { title: "Volume", name: "on_balance_volume_chart" },
+  { title: "MACD", name: "macd" },
+  { title: "RSI", name: "rsi" },
+  { title: "Bollinger Bands", name: "bollinger_bands_plot" },
+  { title: "Stochastic Oscillator", name: "stochastic_oscillator_plot" },
+  { title: "Williams", name: "williams_r_plot" },
+  { title: "ADX", name: "adx_plot" },
+  { title: "CMF", name: "cmf", span: 2 },
+];
+
+import { useTicker } from "../../../hooks/useTicker"; 
+
 const TechnicalsTab: React.FC = () => {
   const { t } = useTranslation();
+  const { ticker } = useTicker();
+
   return (
     <div className="min-h-full h-full w-full relative">
-      <div className="grid lg:grid-cols-1 ">
+      <div className="grid lg:grid-cols-1">
         <div className="bg-white p-4 shadow-sm space-y-4 xl:col-span-2">
           <h2 className="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl p-6">
             {t("analytics_page.technicals.technical_analysis")}
@@ -33,68 +41,19 @@ const TechnicalsTab: React.FC = () => {
           </h2>
         </div>
 
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            Price Trend
-          </h2>
-          <PriceTrendChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            Volume
-          </h2>
-          <VolumeChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            MACD
-          </h2>
-          <MACDChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            RSI
-          </h2>
-          <RSIChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            Bollinger Bands
-          </h2>
-          <BollingerBandsChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            Stochastic Oscillator
-          </h2>
-          <StochasticOscillatorChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            Williams
-          </h2>
-          <WilliamsChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 place-items-center ">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            ADX
-          </h2>
-          <ADXChart />
-        </div>
-
-        <div className="bg-white p-6 shadow-sm space-y-4 xl:col-span-2 place-items-center mb-4">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
-            CMF
-          </h2>
-          <CMFChart />
-        </div>
+        {chartConfigs.map(({ title, name, span }) => (
+          <div
+            key={name}
+            className={`bg-white p-6 shadow-sm space-y-4 place-items-center ${
+              span === 2 ? "xl:col-span-2" : ""
+            }`}
+          >
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">
+              {title}
+            </h2>
+            <ChartComponent chartName={name} ticker={ticker} />
+          </div>
+        ))}
       </div>
     </div>
   );

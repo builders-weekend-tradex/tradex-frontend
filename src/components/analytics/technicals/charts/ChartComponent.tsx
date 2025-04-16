@@ -3,10 +3,9 @@ import { fetchSingleChart } from "../../../../utilities/api";
 import { ChartComponentProps } from "../../../../types/interfaces";
 import TradexLogo from "../../../../assets/tradex-logo.svg";
 
-const ChartComponent: React.FC<ChartComponentProps> = ({
-  ticker,
-  chartName,
-}) => {
+const chartCache: Record<string, string> = {};
+
+const ChartComponent: React.FC<ChartComponentProps> = ({ ticker, chartName }) => {
   const [chartHtml, setChartHtml] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,8 +20,16 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
     setLoading(true);
     setError(null);
 
+    const cacheKey = `${ticker}_${chartName}`;
+    if (chartCache[cacheKey]) {
+      setChartHtml(chartCache[cacheKey]);
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetchSingleChart(chartName, ticker);
+      chartCache[cacheKey] = response;
       setChartHtml(response);
     } catch {
       handleError("Failed to load chart.");
@@ -59,7 +66,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
           <img
             src={TradexLogo}
             alt="Loading"
-            className="w-40 h-40 animate-pulse "
+            className="w-40 h-40 animate-pulse"
           />
         </div>
       ) : error ? (
@@ -67,7 +74,7 @@ const ChartComponent: React.FC<ChartComponentProps> = ({
           <img
             src={TradexLogo}
             alt="Loading"
-            className="w-40 h-40 animate-pulse "
+            className="w-40 h-40 animate-pulse"
           />
           <p className="text-gray-900 bg-black">{error}</p>
         </div>
