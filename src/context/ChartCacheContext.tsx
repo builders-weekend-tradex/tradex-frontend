@@ -1,9 +1,10 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { fetchSingleChart } from "../utilities/api";
 
 interface ChartCacheContextType {
   charts: Record<string, string>;
   loadCharts: (ticker: string, chartNames: string[]) => Promise<void>;
+  clearCharts: () => void;
 }
 
 const ChartCacheContext = createContext<ChartCacheContextType | null>(null);
@@ -25,8 +26,21 @@ export const ChartCacheProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     setCharts(prev => ({ ...prev, ...newCharts }));
   };
 
+  const clearCharts = () => {
+    setCharts({});
+  };
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      clearCharts();
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, []);
+
   return (
-    <ChartCacheContext.Provider value={{ charts, loadCharts }}>
+    <ChartCacheContext.Provider value={{ charts, loadCharts, clearCharts }}>
       {children}
     </ChartCacheContext.Provider>
   );
